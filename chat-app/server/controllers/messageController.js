@@ -20,11 +20,44 @@ export const getUsersForSidebar = async (req, res)=>{
         await Promise.all(promises);
         res.json({success: true, users: filteredUsers, unseenMessages})
     } catch (error) {
-        console.log(error.messages);
-        res.json({success: false, messages: error.messages})
-        
+        console.log(error.message);
+        res.json({success: false, message: error.message})
     }
 }
 
-//Get all messages for selected user 
-//3:21.44 
+//Get all messages for selected user
+export const getMessages = async(req, res)=>{
+    try {
+        const { id: selectedUserId } = req.params;
+        const myId = req.user._id;
+
+        const messages = await Message.find({
+            $or: [
+                {senderId: myId, receiverId: selectedUserId},
+                {senderId: selectedUserId, receiverId: myId},
+            ]
+        })
+        await Message.updateMany({senderId: selectedUserId, receiverId: myId}, {seen: true});
+
+        res.json({success: true, messages})
+
+    } catch (error) {
+        console.log(error.message);
+        res.json({success: false, message: error.message})
+    }
+}
+
+//api to mark messgae as seen using message id
+export const markMessageAsSeen = async (req, res)=>{
+    try {
+        const { id } = req.params;
+        await Message.findByIdAndUpdate(id, {seen: true})
+        res.json({success: true})
+    } catch (error) {
+        console.log(error.message);
+        res.json({success: false, message: error.message})
+    }
+}
+
+//Send message to selected User
+// 3:32:00
