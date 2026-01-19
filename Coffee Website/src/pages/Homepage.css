@@ -1,0 +1,285 @@
+.Hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 35px;
+}
+
+.Hero img {
+    width: 100%;
+    height: 100%;
+}
+
+.Hero .herotext {
+    position: absolute;
+    color: white;
+    left: 30px;
+    top: 200px;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.herotext h1 {
+    font-size: 50px;
+    margin: 30px;
+}
+
+.herotext p {
+    margin: 0 800px 0 30px;
+}
+
+.Hero .Buttons {
+    position: absolute;
+    left: 60px;
+    top: 450px;
+}
+
+.Buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.Buttons button {
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.Buttons button:first-child {
+    background-color: #6F4E37;
+    color: white;
+}
+
+.Topmenu {
+    background-color: #feeadc;
+    padding: 100px;
+
+}
+
+.Topmenu h2 {
+    text-align: center;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.Favourites {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.Favourites img {
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.AllFavourites {
+    display: flex;
+}
+
+.AllFavourites {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.Favourites {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.Favourites::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #6f451a;
+}
+
+/* Remove line from last item */
+.Favourites:last-child::after {
+    display: none;
+}
+
+/* Homesection Fouthpart */
+.Fourthsection {
+    background-color: #feeadc;
+    padding: 50px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Fourthsecpartone {
+    padding: 50px;
+}
+
+.Fourthsecpartone h4 {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #3B2A22;
+    margin-bottom: 10px;
+}
+
+.Fourthsecpartone h1 {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin-bottom: 10px;
+}
+
+.Fourthsecpartone p {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #6E5E55;
+    margin-bottom: 10px;
+    padding-right: 70px;
+}
+
+.Fourthsecpartone button {
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.Fouthlastbutton {
+    background-color: #3B2A22;
+    color: white;
+}
+
+.Fourthsecparttwo h1 {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.coffee-cards {
+    display: flex;
+    gap: 30px;
+}
+
+.coffee-card {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+}
+
+.coffee-card img {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Homesection Fifthpart */
+.Fifthsection {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.Fifthsection img {
+    width: 100%;
+    height: 400px;
+}
+
+.Fifthsectiontext>* {
+    margin-bottom: 15px;
+}
+
+.Fifthsection h2 {
+    font-size: 50px;
+}
+
+.Fifthsection p {
+    padding: 0 900px 0 0;
+}
+
+.Fifthsectiontext button {
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #6F4E37;
+    color: white;
+}
+
+.Fifthsection .Fifthsectiontext {
+    position: absolute;
+    color: white;
+    left: 70px;
+    top: 150px;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Homesection Sixthpart */
+.CustomerReviewimg img {
+    height: 30px;
+    border-radius: 50%;
+}
+
+.CustomerReviewtext p {
+    color: gray;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    padding-right: 100px;
+}
+
+.CustomerReviewtext h4 {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.CustomerReveiws {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 40px;
+    position: relative;
+}
+
+.Sixthsection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 50px;
+    background-color: #feeadc;
+}
+
+.CustomerReveiws:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #6f451a;
+}
+
+/* Homesection Footerbar */
+.Footerbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #3B2A22;
+    padding: 10px;
+    color: white;
+}
+.Footerbar h4{
+    font-weight: 300;
+    color: white;
+}
+.Footbaricons span{
+    font-size: 22px;
+    padding: 8px;
+}
+.Footbarbutton button{
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: none;
+}
+.Footbarbutton{
+    display: flex;
+    gap: 20px;
+}
+.Footbarsecbutton{
+    background-color: #6f451a;
+    color: white;
+}

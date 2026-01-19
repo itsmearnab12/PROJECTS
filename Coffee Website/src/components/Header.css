@@ -1,0 +1,30 @@
+.Navbar {
+    background-color: #d7ac8e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+.Navbarright a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+}
+
+.Navbarright {
+    display: flex;
+    gap: 80px;
+}
+
+.Navbarleft {
+    color: black;
+    font-weight: 700;
+}

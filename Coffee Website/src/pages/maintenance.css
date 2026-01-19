@@ -1,0 +1,26 @@
+.maintenance {
+  height: 100vh;
+  background: linear-gradient(135deg, #6f4e37, #3e2723);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.maintenance h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.maintenance p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  max-width: 500px;
+}
+
+.maintenance span {
+  opacity: 0.8;
+}

@@ -1,0 +1,97 @@
+.Storypage {
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Storypage img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(5px);
+    transform: scale(1.05);
+}
+
+.Storypagetext {
+    position: absolute;
+    text-align: center;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.Storypagetext h2 {
+    font-size: 50px;
+}
+
+.Storypagetext p {
+    color: black;
+    margin: 30px 300px;
+    font-weight: 600;
+}
+
+.sectiontwo {
+    text-align: center;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sectiontwo h1{
+    padding-top: 50px;
+}
+
+.sectiontwo > p {
+  padding:  50px 300px;
+}
+
+.Storypahesectwohead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 200px;
+    gap: 70px;
+}
+
+.Storypagesectwo {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.Storypagesectwo h4{
+    padding: 20px 0;
+}
+
+.Ourstoryhead {
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Ourstoryhead img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(5px);
+    transform: scale(1.05);
+}
+
+.Ourstorytext {
+    position: absolute;
+    text-align: center;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: black;
+}
+
+.Ourstorytext h2{
+    font-size: 50px;
+}
+.Ourstorytext p{
+    padding: 20px 100px;
+    line-height: 1.3;
+    font-weight: 700;
+}

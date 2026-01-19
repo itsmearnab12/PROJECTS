@@ -1,0 +1,33 @@
+.Contactpagehead {
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.Contactpagehead img {
+    width: 100%;
+    height: 100%;
+}
+
+.Contactpagetext {
+    position: absolute;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin-top: 50px;
+}
+
+.Contactpagetext h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.Contactpagetext p {
+    color: black;
+    margin: 30px 350px;
+    font-weight: 600;
+    text-align: center;
+}
+
