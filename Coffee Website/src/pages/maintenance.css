@@ -1,7 +1,6 @@
 .maintenance {
   height: 100vh;
-  background: linear-gradient(135deg, #6f4e37, #3e2723);
-  color: #fff;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
