@@ -12,15 +12,21 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<DashboardPage />}></Route>
-        <Route path="/Transaction" element={<TransactionPage />}></Route>
-        <Route path="/Wallet" element={<WalletPage />}></Route>
-        <Route path="/Goals" element={<GoalPage />}></Route>
-        <Route path="/Budget" element={<BudgetPage />}></Route>
-        <Route path="/Analytics" element={<AnalyticsPage />}></Route>
-      </Routes>
+      <div className='flex'>
+        <div>
+          <Navbar />
+        </div>
+        <div>
+          <Routes>
+            <Route path="/" element={<DashboardPage />}></Route>
+            <Route path="/Transaction" element={<TransactionPage />}></Route>
+            <Route path="/Wallet" element={<WalletPage />}></Route>
+            <Route path="/Goals" element={<GoalPage />}></Route>
+            <Route path="/Budget" element={<BudgetPage />}></Route>
+            <Route path="/Analytics" element={<AnalyticsPage />}></Route>
+          </Routes>
+        </div>
+      </div>
     </>
   )
 }
