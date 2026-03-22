@@ -1,10 +1,14 @@
 import { Cards } from "../components/Cards";
+
 export function DashboardPage() {
     return (
-        <>
-            <div>
+        <div className="px-8 py-6">
+            <h1 className="text-2xl font-semibold mb-8">
                 Welcome Back Arnab to Fintech
-                <div className="flex gap-3 justify-between">
+            </h1>
+
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-4 gap-6">
                     <Cards
                         title="Total balance"
                         amount={15700}
@@ -31,6 +35,6 @@ export function DashboardPage() {
                     />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
