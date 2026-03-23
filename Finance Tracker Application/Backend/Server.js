@@ -3,11 +3,13 @@ import express from 'express'
 import cors from "cors";
 import 'dotenv/config';
 import cookieParser from 'cookie-parser';
+import connectDB from './config/mongodb.js';
 
 //2nd: Create the express app and also define the port number
 const app = express()
 //Note: Here (process.env.PORT) means if we define a PORT number in .env file then the server will run on that port number other wise the server will run on port: 4000
 const port = process.env.PORT || 4000;
+connectDB();
 
 //3rd: using express.json so that all the request will be passed through json
 app.use(express.json());
