@@ -6,7 +6,9 @@ import { DashboardPage } from './pages/DashboardPage';
 import { GoalPage } from './pages/GoalPage';
 import { TransactionPage } from './pages/TransactionPage';
 import { WalletPage } from './pages/WalletPage';
+import LoginPage from './pages/LoginPage';
 import './App.css'
+
 
 function App() {
 
@@ -19,6 +21,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<DashboardPage />}></Route>
+            <Route path="/Login" element={<LoginPage />}></Route>
             <Route path="/Transaction" element={<TransactionPage />}></Route>
             <Route path="/Wallet" element={<WalletPage />}></Route>
             <Route path="/Goals" element={<GoalPage />}></Route>
