@@ -42,7 +42,7 @@ export const signup = async (req, res) => {
 };
 
 //Controller function for user login
-export const login = async (res, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -72,6 +72,22 @@ export const login = async (res, res) => {
     });
 
     return res.json({ success: true });
+  } catch (error) {
+    return res.json({ success: false, message: error.message });
+  }
+};
+
+//Controller function for user logout
+export const logout = async (req, res) => {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
+
+    return res.json({ success: true, message: "Logged out successfully" });
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
