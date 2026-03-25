@@ -11,21 +11,21 @@ const LoginPage = () => {
     <div className='form'>
       <div className='form-box'>
         <div>
-          <h2>{state === 'Sign up' ? 'Welcome to Fintech' : 'Create Your Account'}</h2>
-          <h2>{state === 'Sign up' ? 'Welcome to Fintech' : 'Login To Your Account'}</h2>
+          <h2>Welcome to Fintech</h2>
+          <h2>{state === 'Sign up' ? 'Create Your Account' : 'Login to Your Account'}</h2>
         </div>
         <form>
           {state === 'Sign up' && (
-            <div className='fromdetails'>
+            <div className='form-details'>
               <FaUser />
               <input type="text" placeholder='Full Name' required />
             </div>
           )}
-          <div className='fromdetails'>
+          <div className='form-details'>
             <MdOutlineMailOutline />
             <input type="Email" placeholder='Email Id' required />
           </div>
-          <div className='fromdetails'>
+          <div className='form-details'>
             <RiLockPasswordLine />
             <input type="Password" placeholder='Password' required />
           </div>
