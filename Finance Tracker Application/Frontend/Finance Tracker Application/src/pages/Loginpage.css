@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.form-box {
+    border: 2px solid black;
+    padding: 20px;
+    width: 370px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.fromdetails {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fromdetails {
+    border: 1px solid black;
+    max-width: 200px;
+}
