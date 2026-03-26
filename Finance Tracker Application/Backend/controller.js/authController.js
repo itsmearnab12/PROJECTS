@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import Person from "../models/Person.js";
+import { Person } from "../models/Person.js";
 
 //Controller function for user Signup'
 export const signup = async (req, res) => {

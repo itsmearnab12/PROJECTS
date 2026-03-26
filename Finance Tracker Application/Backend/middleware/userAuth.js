@@ -8,9 +8,9 @@ const userAuth = (req, res, next) => {
     }
 
     try {
-        const tokeDecode = jwt.verify(token, process.env.JWT_SECRET);
+        const tokenDecode = jwt.verify(token, process.env.JWT_SECRET);
 
-        if(tokeDecode.id){
+        if(tokenDecode.id){
             req.body.userId = tokenDecode.id;
         }else{
             return res.json({success: false, message: 'Not Authorized. Login again'})

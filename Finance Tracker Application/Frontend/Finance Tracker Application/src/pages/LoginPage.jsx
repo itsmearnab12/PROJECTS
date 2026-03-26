@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -6,6 +8,39 @@ import "./Loginpage.css"
 const LoginPage = () => {
 
   const [state, setState] = useState('Sign up');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const url =
+        state === "Sign up"
+          ? "http://localhost:4000/api/auth/signup"
+          : "http://localhost:4000/api/auth/login"
+
+      const payload =
+        state === "Sign up"
+          ? { name, email, password }
+          : { email, password };
+
+      const res = await axios.post(url, payload, {
+        withCredentials: true
+      });
+
+      if (res.data.success) {
+        navigate("/");
+      } else {
+        alert(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className='form'>
