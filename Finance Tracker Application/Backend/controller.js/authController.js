@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { Person } from "../models/Person.js";
+import { Person } from "../models.js/Person.js";
 
 //Controller function for user Signup'
 export const signup = async (req, res) => {
@@ -14,7 +14,7 @@ export const signup = async (req, res) => {
     const existingUser = await Person.findOne({ email });
     if (existingUser) {
       return res.json({
-        Success: false,
+        success: false,
         message: "User already exist with this email",
       });
     }

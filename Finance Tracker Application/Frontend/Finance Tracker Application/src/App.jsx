@@ -7,6 +7,7 @@ import { GoalPage } from './pages/GoalPage';
 import { TransactionPage } from './pages/TransactionPage';
 import { WalletPage } from './pages/WalletPage';
 import LoginPage from './pages/LoginPage';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
@@ -16,19 +17,21 @@ function App() {
       <Route
         path="/*"
         element={
-          <div className="flex min-h-screen">
-            <Navbar />
-            <div className="flex-1 p-6">
-              <Routes>
-                <Route path="/" element={<DashboardPage />} />
-                <Route path="/Transaction" element={<TransactionPage />} />
-                <Route path="/Wallet" element={<WalletPage />} />
-                <Route path="/Goals" element={<GoalPage />} />
-                <Route path="/Budget" element={<BudgetPage />} />
-                <Route path="/Analytics" element={<AnalyticsPage />} />
-              </Routes>
+          <ProtectedRoute>
+            <div className="flex min-h-screen">
+              <Navbar />
+              <div className="flex-1 p-6">
+                <Routes>
+                  <Route path="/" element={<DashboardPage />} />
+                  <Route path="/Transaction" element={<TransactionPage />} />
+                  <Route path="/Wallet" element={<WalletPage />} />
+                  <Route path="/Goals" element={<GoalPage />} />
+                  <Route path="/Budget" element={<BudgetPage />} />
+                  <Route path="/Analytics" element={<AnalyticsPage />} />
+                </Routes>
+              </div>
             </div>
-          </div>
+          </ProtectedRoute>
         }
       />
 

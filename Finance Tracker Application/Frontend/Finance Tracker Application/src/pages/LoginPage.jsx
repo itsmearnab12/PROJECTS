@@ -16,7 +16,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("Form Submitted");
     try {
       const url =
         state === "Sign up"
@@ -49,22 +49,22 @@ const LoginPage = () => {
           <h2>Welcome to Fintech</h2>
           <h2>{state === 'Sign up' ? 'Create Your Account' : 'Login to Your Account'}</h2>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           {state === 'Sign up' && (
             <div className='form-details'>
               <FaUser />
-              <input type="text" placeholder='Full Name' required />
+              <input type="text" placeholder='Full Name' value={name} onChange={(e) => setName(e.target.value)} required />
             </div>
           )}
           <div className='form-details'>
             <MdOutlineMailOutline />
-            <input type="Email" placeholder='Email Id' required />
+            <input type="email" placeholder='Email Id' value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div className='form-details'>
             <RiLockPasswordLine />
-            <input type="Password" placeholder='Password' required />
+            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-          <button>{state}</button>
+          <button type="submit">{state}</button>
         </form>
         {state === 'Sign up' ? (
           <p>Already have an account?{' '}
