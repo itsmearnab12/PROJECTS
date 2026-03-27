@@ -8,4 +8,8 @@ authRouter.post('/signup', signup);
 authRouter.post('/login', login);
 authRouter.post('/logout', logout);
 
+authRouter.get('/me', userAuth, (req, res) => {
+  res.json({ success: true });
+});
+
 export default authRouter;

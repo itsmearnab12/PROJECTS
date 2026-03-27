@@ -34,6 +34,7 @@ const LoginPage = () => {
 
       if (res.data.success) {
         navigate("/");
+        console.log(res.data);
       } else {
         alert(res.data.message);
       }
