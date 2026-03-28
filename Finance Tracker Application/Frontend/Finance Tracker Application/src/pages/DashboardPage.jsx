@@ -1,10 +1,26 @@
 import { Cards } from "../components/Cards";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export function DashboardPage() {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        axios.get("http://localhost:4000/api/auth/me", {
+            withCredentials: true
+        })
+            .then((res) => {
+                console.log(res.data);
+                if (res.data.success) {
+                    setUser(res.data.user);
+                }
+            })
+            .catch((err) => console.log(err));
+    }, []);
     return (
         <div className="px-8 py-6">
             <h1 className="text-2xl font-semibold mb-8">
-                Welcome Back Arnab to Fintech
+                Welcome {user ? user.name : "User"} to Fintech
             </h1>
 
             <div className="max-w-7xl mx-auto">
