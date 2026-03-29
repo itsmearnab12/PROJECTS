@@ -12,7 +12,7 @@ import MaintenancePage from './pages/MaintenancePage';
 import './App.css';
 
 function App() {
-  const isMaintenanceMode = true;
+  const isMaintenanceMode = false;
 
   if (isMaintenanceMode) {
     return <MaintenancePage />
