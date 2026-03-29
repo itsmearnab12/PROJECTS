@@ -5,6 +5,7 @@ import "dotenv/config";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
+import noteRouter from "./routes/noteRoutes.js";
 
 //2nd: Create the express app and also define the port number
 const app = express();
@@ -26,6 +27,7 @@ app.use(
 //5th: creating a arrow function to send response
 app.get("/", (req, res) => res.send("API Working"));
 app.use("/api/auth", authRouter);
+app.use("/api/notes", noteRouter);
 
 //4th: Creating the link in which the server will run
 app.listen(port, () => console.log(`Server statred on PORT:${port}`));
