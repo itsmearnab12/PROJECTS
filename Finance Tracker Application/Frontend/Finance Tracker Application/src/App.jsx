@@ -7,10 +7,17 @@ import { GoalPage } from './pages/GoalPage';
 import { TransactionPage } from './pages/TransactionPage';
 import { WalletPage } from './pages/WalletPage';
 import LoginPage from './pages/LoginPage';
+import MaintenancePage from './pages/MaintenancePage';
 // import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
+  const isMaintenanceMode = true;
+
+  if (isMaintenanceMode) {
+    return <MaintenancePage />
+  }
+
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
