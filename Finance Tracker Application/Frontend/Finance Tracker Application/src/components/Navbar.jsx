@@ -6,8 +6,9 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { TbTransactionRupee } from "react-icons/tb";
 import { CiWallet } from "react-icons/ci";
 import { GoGoal } from "react-icons/go";
-import { FaIndianRupeeSign } from "react-icons/fa6";
+// import { FaIndianRupeeSign } from "react-icons/fa6";
 import { SiGoogleanalytics } from "react-icons/si";
+import { FaRegNoteSticky } from "react-icons/fa6";
 
 export function Navbar() {
     const navigate = useNavigate();
@@ -36,7 +37,8 @@ export function Navbar() {
                         <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Transaction"><TbTransactionRupee />Transaction</NavLink>
                         <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Wallet"><CiWallet />Wallet</NavLink>
                         <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Goals"><GoGoal />Goals</NavLink>
-                        <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Budget"><FaIndianRupeeSign />Budget</NavLink>
+                        {/* <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Budget"><FaIndianRupeeSign />Budget</NavLink> */}
+                        <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Notes"><FaRegNoteSticky />Notes</NavLink>
                         <NavLink className="link p-3 flex items-center gap-2 hover:bg-violet-300 rounded-2xl navpage" to="/Analytics"><SiGoogleanalytics />Analytics</NavLink>
                     </div>
                     <button onClick={handleLogout} className="mt-5 p-3 bg-red-500 text-white rounded-xl hover:bg-red-600">
