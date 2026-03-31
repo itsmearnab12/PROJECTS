@@ -1,12 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { AnalyticsPage } from './pages/AnalyticsPage';
-// import { BudgetPage } from './pages/BudgetPage';
+import { BudgetPage } from './pages/BudgetPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { GoalPage } from './pages/GoalPage';
 import { TransactionPage } from './pages/TransactionPage';
 import { WalletPage } from './pages/WalletPage';
-import { NotesPage } from './pages/NotesPage';
 import LoginPage from './pages/LoginPage';
 import MaintenancePage from './pages/MaintenancePage';
 // import ProtectedRoute from './components/ProtectedRoute';
@@ -35,8 +34,7 @@ function App() {
                 <Route path="/Transaction" element={<TransactionPage />} />
                 <Route path="/Wallet" element={<WalletPage />} />
                 <Route path="/Goals" element={<GoalPage />} />
-                {/* <Route path="/Notes" element={<BudgetPage />} /> */}
-                <Route path="/Notes" element={<NotesPage />} />
+                <Route path="/Notes" element={<BudgetPage />} /> 
                 <Route path="/Analytics" element={<AnalyticsPage />} />
               </Routes>
             </div>
