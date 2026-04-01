@@ -1,4 +1,4 @@
-import { Transaction } from "../models.js/Transaction";
+import { Transaction } from "../models.js/Transaction.js";
 
 //Controller function for Add Transaction
 export const addTransaction = async (req, res) => {
@@ -6,7 +6,7 @@ export const addTransaction = async (req, res) => {
     const { amount, type, category, note } = req.body;
 
     const transaction = new Transaction({
-      userId: req.body.userId,
+      userId: req.userId,
       amount,
       type,
       category,
@@ -15,7 +15,7 @@ export const addTransaction = async (req, res) => {
 
     await transaction.save();
 
-    res.josn({ success: true, transaction });
+    res.json({ success: true, transaction });
   } catch (error) {
     res.json({ success: false, message: error.message });
   }
@@ -24,11 +24,9 @@ export const addTransaction = async (req, res) => {
 //Controller function for Get All Transaction
 export const getTransaction = async (req, res) => {
   try {
-    const transaction = await transaction
-      .find({
-        userId: req.body.userId,
-      })
-      .sort({ createdAt: -1 });
+    const transaction = await Transaction.find({
+        userId: req.userId,
+      }).sort({ createdAt: -1 });
 
     res.json({ success: true, transaction });
   } catch (error) {
