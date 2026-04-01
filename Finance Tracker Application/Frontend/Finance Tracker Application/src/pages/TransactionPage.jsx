@@ -17,6 +17,7 @@ export function TransactionPage() {
     return (
         <div className="transaction-container">
             <h1 className="title">Transaction</h1>
+            <button className="add-btn">+ Add Transaction</button>
             <table className="transaction-table">
                 <thead>
                     <tr>
@@ -39,7 +40,16 @@ export function TransactionPage() {
                             <td>{t.type}</td>
                             <td>{t.note}</td>
                             <td>
-                                <button className="delete-btn">Delete</button>
+                                <button className="delete-btn" onClick={async () => {
+                                    await axios.delete(
+                                        `http://localhost:4000/api/transaction/${t._id}`,
+                                        { withCredentials: true }
+                                    );
+
+                                    setTransactions(transactions.filter((item) => item._id !== t._id));
+                                }}
+                                >Delete
+                                </button>
                             </td>
                         </tr>
                     ))}

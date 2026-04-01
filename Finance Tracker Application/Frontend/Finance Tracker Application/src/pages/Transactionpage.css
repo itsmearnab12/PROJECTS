@@ -57,3 +57,17 @@
 .delete-btn:hover {
     background: darkred;
 }
+
+.add-btn{
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background: #5a4bd1;
+}
