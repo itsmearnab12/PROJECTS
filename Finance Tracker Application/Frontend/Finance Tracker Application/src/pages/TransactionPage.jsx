@@ -5,6 +5,13 @@ import "./Transactionpage.css"
 
 export function TransactionPage() {
     const [transactions, setTransactions] = useState([]);
+    const [showForm, setShowForm] = useState(false);
+    const [formData, setFormData] = useState({
+        amount: "",
+        type: "expense",
+        category: "",
+        note: "",
+    });
 
     useEffect(() => {
         axios.get("http://localhost:4000/api/transaction", {
@@ -14,10 +21,74 @@ export function TransactionPage() {
         }).catch((err) => console.log(err));
     }, []);
 
+    const handleAddTransaction = async () => {
+        try {
+            const res = await axios.post(
+                "http://localhost:4000/api/transaction/add",
+                { withCredentials: true }
+            );
+
+            if (res.data.success) {
+                setTransactions([res.data.transaction, ...transactions]);
+
+                setFormData({
+                    amount: "true",
+                    type: "expense",
+                    category: "true",
+                    note: "",
+                });
+
+                setShowForm(false);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <div className="transaction-container">
             <h1 className="title">Transaction</h1>
-            <button className="add-btn">+ Add Transaction</button>
+            <button className="add-btn" onClick={() => setShowForm(true)}>
+                + Add Transaction
+            </button>
+            {showForm && (
+                <div>
+                    <input
+                        type="number"
+                        placeholder="Amount"
+                        value={formData.amount}
+                        onChange={(e) =>
+                            setFormData({ ...formData, amount: e.target.value })
+                        }
+                    />
+                    <select
+                        value={formData.type}
+                        onChange={(e) =>
+                            setFormData({ ...formData, type: e.target.value })
+                        }
+                    >
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                    <input
+                        type="text"
+                        placeholder="Category"
+                        value={formData.category}
+                        onChange={(e) =>
+                            setFormData({ ...formData, category: e.target.value })
+                        }
+                    />
+                    <input
+                        type="text"
+                        placeholder="Add Note"
+                        value={formData.note}
+                        onChange={(e) =>
+                            setFormData({ ...formData, note: e.target.value })
+                        }
+                    />
+                    <button onClick={handleAddTransaction}>Save</button>
+                    <button onClick={() => setShowForm(false)}>Cancle</button>
+                </div>
+            )}
             <table className="transaction-table">
                 <thead>
                     <tr>
@@ -31,7 +102,7 @@ export function TransactionPage() {
                 </thead>
                 <tbody>
                     {transactions.map((t) => (
-                        <tr>
+                        <tr key={t._id}>
                             <td>{new Date(t.createdAt).toLocaleDateString()}</td>
                             <td className={t.type === "income" ? "income" : "expense"}>
                                 ₹ {t.amount}
