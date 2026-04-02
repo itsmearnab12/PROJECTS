@@ -25,8 +25,8 @@ export const addTransaction = async (req, res) => {
 export const getTransaction = async (req, res) => {
   try {
     const transaction = await Transaction.find({
-        userId: req.userId,
-      }).sort({ createdAt: -1 });
+      userId: req.userId,
+    }).sort({ createdAt: -1 });
 
     res.json({ success: true, transaction });
   } catch (error) {
@@ -40,6 +40,37 @@ export const deleteTransaction = async (req, res) => {
     await Transaction.findByIdAndDelete(req.params.id);
 
     res.json({ success: true });
+  } catch (error) {
+    res.json({ success: false, message: error.message });
+  }
+};
+
+//Controller function for Transaction summary
+export const getSummary = async (req, res) => {
+  try {
+    const transactions = await Transaction.find({
+      userId: req.userId,
+    });
+
+    let income = 0;
+    let expense = 0;
+
+    transactions.forEach((t) => {
+      if (t.type === "income") {
+        income += t.amount;
+      } else {
+        expense += t.amount;
+      }
+    });
+
+    const balance = income - expense;
+
+    res.json({
+      success: true,
+      income,
+      expense,
+      balance,
+    });
   } catch (error) {
     res.json({ success: false, message: error.message });
   }
