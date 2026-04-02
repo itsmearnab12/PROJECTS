@@ -25,6 +25,7 @@ export function TransactionPage() {
         try {
             const res = await axios.post(
                 "http://localhost:4000/api/transaction/add",
+                formData,
                 { withCredentials: true }
             );
 
@@ -32,9 +33,9 @@ export function TransactionPage() {
                 setTransactions([res.data.transaction, ...transactions]);
 
                 setFormData({
-                    amount: "true",
+                    amount: "",
                     type: "expense",
-                    category: "true",
+                    category: "",
                     note: "",
                 });
 
@@ -51,7 +52,7 @@ export function TransactionPage() {
                 + Add Transaction
             </button>
             {showForm && (
-                <div>
+                <div className="form-box">
                     <input
                         type="number"
                         placeholder="Amount"
@@ -86,7 +87,17 @@ export function TransactionPage() {
                         }
                     />
                     <button onClick={handleAddTransaction}>Save</button>
-                    <button onClick={() => setShowForm(false)}>Cancle</button>
+                    <button onClick={() => {
+                        setShowForm(false);
+                        setFormData({
+                            amount: "",
+                            type: "expense",
+                            category: "",
+                            note: "",
+                        });
+                    }}>
+                        Cancel
+                    </button>
                 </div>
             )}
             <table className="transaction-table">
