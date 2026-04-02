@@ -52,52 +52,54 @@ export function TransactionPage() {
                 + Add Transaction
             </button>
             {showForm && (
-                <div className="form-box">
-                    <input
-                        type="number"
-                        placeholder="Amount"
-                        value={formData.amount}
-                        onChange={(e) =>
-                            setFormData({ ...formData, amount: e.target.value })
-                        }
-                    />
-                    <select
-                        value={formData.type}
-                        onChange={(e) =>
-                            setFormData({ ...formData, type: e.target.value })
-                        }
-                    >
-                        <option value="expense">Expense</option>
-                        <option value="income">Income</option>
-                    </select>
-                    <input
-                        type="text"
-                        placeholder="Category"
-                        value={formData.category}
-                        onChange={(e) =>
-                            setFormData({ ...formData, category: e.target.value })
-                        }
-                    />
-                    <input
-                        type="text"
-                        placeholder="Add Note"
-                        value={formData.note}
-                        onChange={(e) =>
-                            setFormData({ ...formData, note: e.target.value })
-                        }
-                    />
-                    <button onClick={handleAddTransaction}>Save</button>
-                    <button onClick={() => {
-                        setShowForm(false);
-                        setFormData({
-                            amount: "",
-                            type: "expense",
-                            category: "",
-                            note: "",
-                        });
-                    }}>
-                        Cancel
-                    </button>
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <input
+                            type="number"
+                            placeholder="Amount"
+                            value={formData.amount}
+                            onChange={(e) =>
+                                setFormData({ ...formData, amount: e.target.value })
+                            }
+                        />
+                        <select
+                            value={formData.type}
+                            onChange={(e) =>
+                                setFormData({ ...formData, type: e.target.value })
+                            }
+                        >
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                        <input
+                            type="text"
+                            placeholder="Category"
+                            value={formData.category}
+                            onChange={(e) =>
+                                setFormData({ ...formData, category: e.target.value })
+                            }
+                        />
+                        <input
+                            type="text"
+                            placeholder="Add Note"
+                            value={formData.note}
+                            onChange={(e) =>
+                                setFormData({ ...formData, note: e.target.value })
+                            }
+                        />
+                        <button onClick={handleAddTransaction}>Save</button>
+                        <button onClick={() => {
+                            setShowForm(false);
+                            setFormData({
+                                amount: "",
+                                type: "expense",
+                                category: "",
+                                note: "",
+                            });
+                        }}>
+                            Cancel
+                        </button>
+                    </div>
                 </div>
             )}
             <table className="transaction-table">
