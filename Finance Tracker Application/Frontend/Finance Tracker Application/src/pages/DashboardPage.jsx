@@ -4,6 +4,11 @@ import axios from "axios";
 
 export function DashboardPage() {
     const [user, setUser] = useState(null);
+    const [summary, setSummary] = useState({
+        income: 0,
+        expense: 0,
+        balance: 0,
+    })
 
     useEffect(() => {
         axios.get("http://localhost:4000/api/auth/me", {
@@ -16,7 +21,18 @@ export function DashboardPage() {
                 }
             })
             .catch((err) => console.log(err));
+
+        axios.get("http://localhost:4000/api/transaction/summary", {
+            withCredentials: true
+        })
+            .then((res) => {
+                if (res.data.success) {
+                    setSummary(res.data);
+                }
+            })
+            .catch((err) => console.log(err));
     }, []);
+
     return (
         <div className="px-8 py-6">
             <h1 className="text-2xl font-semibold mb-8">
@@ -27,26 +43,26 @@ export function DashboardPage() {
                 <div className="grid grid-cols-4 gap-6">
                     <Cards
                         title="Total balance"
-                        amount={15700}
-                        percentage={12.1}
+                        amount={summary.income}
+                        percentage={0}
                         isPositive={true}
                     />
                     <Cards
                         title="Income"
-                        amount={8500}
-                        percentage={6.3}
+                        amount={summary.income}
+                        percentage={0}
                         isPositive={true}
                     />
                     <Cards
                         title="Expense"
-                        amount={6222}
-                        percentage={2.4}
+                        amount={summary.expense}
+                        percentage={0}
                         isPositive={false}
                     />
                     <Cards
                         title="Total savings"
-                        amount={32913}
-                        percentage={12.1}
+                        amount={summary.balance}
+                        percentage={0}
                         isPositive={true}
                     />
                 </div>
