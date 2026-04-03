@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Apply background ONLY to body */
-body {
-    background-color: rgb(222, 184, 255);
-}
-
 .form {
     display: flex;
     align-items: center;

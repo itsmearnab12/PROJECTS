@@ -1,4 +1,5 @@
 import { Cards } from "../components/Cards";
+import "./Dashboardpage.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -34,13 +35,10 @@ export function DashboardPage() {
     }, []);
 
     return (
-        <div className="px-8 py-6">
-            <h1 className="text-2xl font-semibold mb-8">
-                Welcome {user ? user.name : "User"} to Fintech
-            </h1>
-
-            <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-4 gap-6">
+        <div className="dashboard-header">
+            <h1>Welcome {user ? user.name : "User"} to Fintech</h1>
+            <p>It is the best time to manage your finance</p>
+                <div className="Cards-block">
                     <Cards
                         title="Total balance"
                         amount={summary.income}
@@ -66,7 +64,6 @@ export function DashboardPage() {
                         isPositive={true}
                     />
                 </div>
-            </div>
         </div>
     );
 }
