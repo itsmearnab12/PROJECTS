@@ -47,9 +47,10 @@ export function TransactionPage() {
     };
     return (
         <div className="transaction-container">
-            <h1 className="title">Transaction</h1>
+            <h1 className="title">Transactions</h1>
+            <p className="title-subheading">Overview of your activities</p>
             <button className="add-btn" onClick={() => setShowForm(true)}>
-                + Add Transaction
+                + Add New
             </button>
             {showForm && (
                 <div className="modal-overlay">

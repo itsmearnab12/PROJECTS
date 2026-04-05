@@ -6,6 +6,10 @@
 .title {
     font-size: 24px;
     font-weight: bold;
+}
+
+.title-subheading {
+    color: gray;
     margin-bottom: 20px;
 }
 
@@ -13,7 +17,7 @@
     width: 100%;
     border-collapse: collapse;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
 }
 
@@ -23,8 +27,12 @@
     text-align: left;
 }
 
+.transaction-table th {
+    color: #A498FF;
+}
+
 .transaction-table thead {
-    background: #f5f5f5;
+    background: #ECEAFF;
 }
 
 .transaction-table tbody tr {
@@ -37,34 +45,32 @@
 
 .income {
     color: green;
-    font-weight: bold;
 }
 
 .expense {
     color: red;
-    font-weight: bold;
 }
 
 .delete-btn {
-    padding: 5px 10px;
+    padding: 7px 15px;
     border: none;
-    background: red;
+    background: #8470ff;
     color: white;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
 }
 
 .delete-btn:hover {
-    background: darkred;
+    background: #5a4bd1;
 }
 
 .add-btn {
     margin-bottom: 15px;
     padding: 10px 15px;
-    background: #6c5ce7;
+    background: #8470ff;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     cursor: pointer;
 }
 
@@ -72,7 +78,7 @@
     background: #5a4bd1;
 }
 
-.modal-overlay{
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -85,7 +91,7 @@
     z-index: 1000;
 }
 
-.modal-content{
+.modal-content {
     background: white;
     padding: 20px;
     border-radius: 12px;

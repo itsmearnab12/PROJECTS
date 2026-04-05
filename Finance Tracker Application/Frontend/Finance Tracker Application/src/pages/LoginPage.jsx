@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
+import loginimg from "../assets/loginpage.png";
 import "./Loginpage.css"
 const LoginPage = () => {
 
@@ -76,6 +77,9 @@ const LoginPage = () => {
             <span onClick={() => setState('Sign up')}>Signup here</span>
           </p>
         )}
+      </div>
+      <div className="image-box">
+        <img src={loginimg} alt="" />
       </div>
     </div>
   )
