@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FaUser } from "react-icons/fa";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { RiLockPasswordLine } from "react-icons/ri";
 import loginimg from "../assets/loginpage.png";
 import "./Loginpage.css"
 const LoginPage = () => {
@@ -48,29 +45,26 @@ const LoginPage = () => {
     <div className='form'>
       <div className='form-box'>
         <div>
-          <h2>Welcome to Fintech</h2>
-          <h2>{state === 'Sign up' ? 'Create Your Account' : 'Login to Your Account'}</h2>
+          <h1>{state === 'Sign up' ? 'Welcome to FinSet!' : 'Sign in'}</h1>
+          <h5>{state === 'Sign up' ? 'Sign up and start managing your finances now' : 'Welcome there! Sign in to continue with FinSet'}</h5>
         </div>
         <form onSubmit={handleSubmit}>
           {state === 'Sign up' && (
             <div className='form-details'>
-              <FaUser />
-              <input type="text" placeholder='Full Name' value={name} onChange={(e) => setName(e.target.value)} required />
+              <input type="text" placeholder='Enter your full name' value={name} onChange={(e) => setName(e.target.value)} required />
             </div>
           )}
           <div className='form-details'>
-            <MdOutlineMailOutline />
-            <input type="email" placeholder='Email Id' value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input type="email" placeholder='Enter your Email address' value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div className='form-details'>
-            <RiLockPasswordLine />
-            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input type="password" placeholder='Create password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <button type="submit">{state}</button>
         </form>
         {state === 'Sign up' ? (
           <p>Already have an account?{' '}
-            <span onClick={() => setState('Login')}>Login here</span>
+            <span onClick={() => setState('Sign in')}>Login here</span>
           </p>
         ) : (
           <p>Don't have an account?{' '}
