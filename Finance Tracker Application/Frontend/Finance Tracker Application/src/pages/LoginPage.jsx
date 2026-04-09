@@ -60,7 +60,9 @@ const LoginPage = () => {
           <div className='form-details'>
             <input type="password" placeholder='Create password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-          <button type="submit">{state}</button>
+          <div className='loginpage-btn'>
+            <button type="submit">{state}</button>
+          </div>
         </form>
         {state === 'Sign up' ? (
           <p>Already have an account?{' '}

@@ -42,7 +42,6 @@
 .form-details {
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
     border: 1px solid gray;
     padding: 8px 10px;
     border-radius: 30px;
@@ -57,8 +56,9 @@
     background: transparent;
 }
 
-button {
-    padding: 10px;
+.loginpage-btn button {
+    width: 100%;
+    padding: 10px 10px;
     border: none;
     background-color: #8470ff;
     color: white;
@@ -75,8 +75,14 @@ p span {
     cursor: pointer;
 }
 
-.form img{
+.form img {
     max-height: 95vh;
     object-fit: contain;
     width: 700px;
+}
+
+@media (max-width: 768px) {
+    .image-box{
+        display: none;
+    }
 }

@@ -1,50 +1,50 @@
-.Navbarheader {
-    width: 15vw;
+.Navigation-header {
+    background-color: #eceaff;
+    max-width: 15vw;
     height: 100vh;
-    background-color: rgba(236, 230, 248, 0.649);
-    display: flex;
-    flex-direction: column;
 }
 
-.logout {
-    background: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+.Navigation-header h3 {
+    padding: 30px;
+}
+
+.Navigation-bar button {
     font-size: 17px;
-    align-self: center;
-    margin-bottom: 20px;
 }
 
-.navbar {
+.navlink {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    margin: 40px 0;
-}
-
-.navbar>div {
-    flex: 1;
-}
-
-.navlinks {
-    display: flex;
-    align-items: center;
     margin: 20px;
     gap: 10px;
+    padding: 10px;
     font-size: 17px;
-    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.navlink:hover {
+    background-color: #bfb7ff;
     border-radius: 30px;
 }
 
-.navlinks:hover {
-    background-color: #BFB7FF;
+.navlink.active {
+    background-color: #8470ff;
+    border-radius: 30px;
+    color: white;
 }
 
-.navbar a.active{
-    background-color: #8470ff;
-    color: white;
+.Navbar-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    gap: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.Navbar-btn:hover {
+    cursor: pointer;
 }

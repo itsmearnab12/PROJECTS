@@ -29,19 +29,18 @@ export function Navbar() {
     return (
         <>
             <header>
-                <div className="Navbarheader">
-                    <h3 className="text-xl font-bold">FinSet</h3>
-
-                    <div className="navbar">
-                        <div className="">
-                            <NavLink className="link navlinks" to="/"><LuLayoutDashboard />Dashboard</NavLink>
-                            <NavLink className="link navlinks" to="/Transaction"><TbTransactionRupee />Transaction</NavLink>
-                            <NavLink className="link navlinks" to="/Wallet"><CiWallet />Wallet</NavLink>
-                            <NavLink className="link navlinks" to="/Goals"><GoGoal />Goals</NavLink>
-                            <NavLink className="link navlinks" to="/Budget"><FaIndianRupeeSign />Budget</NavLink>
-                            <NavLink className="link navlinks" to="/Analytics"><SiGoogleanalytics />Analytics</NavLink>
+                <div className="Navigation-header">
+                    <h3>FinSet</h3>
+                    <div className="Navigation-bar">
+                        <div className="navigation-button">
+                            <NavLink className="link navlink" to="/"><LuLayoutDashboard />Dashboard</NavLink>
+                            <NavLink className="link navlink" to="/Transaction"><TbTransactionRupee />Transaction</NavLink>
+                            <NavLink className="link navlink" to="/Wallet"><CiWallet />Wallet</NavLink>
+                            <NavLink className="link navlink" to="/Goals"><GoGoal />Goals</NavLink>
+                            <NavLink className="link navlink" to="/Budget"><FaIndianRupeeSign />Budget</NavLink>
+                            <NavLink className="link navlink" to="/Analytics"><SiGoogleanalytics />Analytics</NavLink>
                         </div>
-                        <button onClick={handleLogout} className="logout"><TbLogout />Logout</button>
+                        <button onClick={handleLogout} className="Navbar-btn"><TbLogout />Logout</button>
                     </div>
                 </div>
             </header>
