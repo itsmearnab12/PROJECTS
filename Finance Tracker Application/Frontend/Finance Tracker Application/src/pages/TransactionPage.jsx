@@ -55,6 +55,8 @@ export function TransactionPage() {
             {showForm && (
                 <div className="modal-overlay">
                     <div className="modal-content">
+                        <h3>Adding a new transaction</h3>
+                        <p>Please fill the form below</p>
                         <input
                             type="number"
                             placeholder="Amount"
@@ -88,18 +90,20 @@ export function TransactionPage() {
                                 setFormData({ ...formData, note: e.target.value })
                             }
                         />
-                        <button onClick={handleAddTransaction}>Save</button>
-                        <button onClick={() => {
-                            setShowForm(false);
-                            setFormData({
-                                amount: "",
-                                type: "expense",
-                                category: "",
-                                note: "",
-                            });
-                        }}>
-                            Cancel
-                        </button>
+                        <div>
+                            <button onClick={handleAddTransaction}>Save</button>
+                            <button onClick={() => {
+                                setShowForm(false);
+                                setFormData({
+                                    type: "expense",
+                                    amount: "",
+                                    category: "",
+                                    note: "",
+                                });
+                            }}>
+                                Cancel
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}

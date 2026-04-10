@@ -26,9 +26,9 @@ function App() {
         path="/*"
         element={
           // <ProtectedRoute>
-          <div className="flex min-h-screen">
+          <div className="app-layout">
             <Navbar />
-            <div className="flex-1 p-6">
+            <div className="page-content">
               <Routes>
                 <Route path="/" element={<DashboardPage />} />
                 <Route path="/Transaction" element={<TransactionPage />} />

@@ -1,4 +1,4 @@
-// import { Cards } from "../components/Cards";
+import { Cards } from "../components/Cards";
 import "./Dashboardpage.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -36,10 +36,10 @@ export function DashboardPage() {
 
     return (
         <div className="dashboard-header">
-            {/* <h1>Welcome {user ? user.name : "User"} to Fintech</h1>
-            <p>It is the best time to manage your finance</p> */}
+            <h1>Welcome {user ? user.name : "User"} to Fintech</h1>
+            <p>It is the best time to manage your finance</p>
                 <div className="Cards-block">
-                    {/* <Cards
+                    <Cards
                         title="Total balance"
                         amount={summary.income}
                         percentage={0}
@@ -62,7 +62,7 @@ export function DashboardPage() {
                         amount={summary.balance}
                         percentage={0}
                         isPositive={true}
-                    /> */}
+                    />
                 </div>
         </div>
     );

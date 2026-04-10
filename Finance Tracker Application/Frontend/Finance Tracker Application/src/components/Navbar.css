@@ -1,11 +1,23 @@
 .Navigation-header {
     background-color: #eceaff;
-    max-width: 15vw;
+    width: 250px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.Navigation-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    margin: 0 25px;
 }
 
 .Navigation-header h3 {
-    padding: 30px;
+    text-align: center;
+    margin: 25px;
 }
 
 .Navigation-bar button {

@@ -1,0 +1,8 @@
+.dashboard-header p{
+    color: gray;
+    margin-bottom: 15px;
+}
+.Cards-block{
+    display: flex;
+    justify-content: space-around;
+}
