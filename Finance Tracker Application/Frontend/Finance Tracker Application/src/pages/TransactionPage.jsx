@@ -57,52 +57,66 @@ export function TransactionPage() {
                     <div className="modal-content">
                         <h3>Adding a new transaction</h3>
                         <p>Please fill the form below</p>
-                        <input
-                            type="number"
-                            placeholder="Amount"
-                            value={formData.amount}
-                            onChange={(e) =>
-                                setFormData({ ...formData, amount: e.target.value })
-                            }
-                        />
-                        <select
-                            value={formData.type}
-                            onChange={(e) =>
-                                setFormData({ ...formData, type: e.target.value })
-                            }
-                        >
-                            <option value="expense">Expense</option>
-                            <option value="income">Income</option>
-                        </select>
-                        <input
-                            type="text"
-                            placeholder="Category"
-                            value={formData.category}
-                            onChange={(e) =>
-                                setFormData({ ...formData, category: e.target.value })
-                            }
-                        />
-                        <input
-                            type="text"
-                            placeholder="Add Note"
-                            value={formData.note}
-                            onChange={(e) =>
-                                setFormData({ ...formData, note: e.target.value })
-                            }
-                        />
-                        <div>
-                            <button onClick={handleAddTransaction}>Save</button>
-                            <button onClick={() => {
+
+                        <div className="form-lineone">
+                            {/* Type Field */}
+                            <div className="form-group">
+                                <label>Type</label>
+                                <select
+                                    value={formData.type}
+                                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                                >
+                                    <option value="expense">Expense</option>
+                                    <option value="income">Income</option>
+                                </select>
+                            </div>
+
+                            {/* Amount Field */}
+                            <div className="form-group">
+                                <label>Amount</label>
+                                <input
+                                    type="number"
+                                    placeholder="10,000"
+                                    value={formData.amount}
+                                    onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Note Field */}
+                        <div className="form-linetwo">
+                            <div className="form-group">
+                                <label>Name</label>
+                                <input
+                                    type="text"
+                                    placeholder="Add Note"
+                                    value={formData.note}
+                                    onChange={(e) => setFormData({ ...formData, note: e.target.value })}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Category Field */}
+                        <div className="form-linethree">
+                            <div className="form-group">
+                                <label>Category</label>
+                                <input
+                                    type="text"
+                                    placeholder="Category"
+                                    value={formData.category}
+                                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="form-buttons">
+                            <button className="form-cancelbtn" onClick={() => {
                                 setShowForm(false);
-                                setFormData({
-                                    type: "expense",
-                                    amount: "",
-                                    category: "",
-                                    note: "",
-                                });
+                                setFormData({ type: "expense", amount: "", category: "", note: "" });
                             }}>
                                 Cancel
                             </button>
+                            <button className="form-savebtn" onClick={handleAddTransaction}>Save</button>
                         </div>
                     </div>
                 </div>
