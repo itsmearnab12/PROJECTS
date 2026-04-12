@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios"
 import "./Transactionpage.css"
 
-
 export function TransactionPage() {
     const [transactions, setTransactions] = useState([]);
     const [showForm, setShowForm] = useState(false);
