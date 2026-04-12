@@ -75,9 +75,9 @@ export function DashboardPage() {
                     isPositive={true}
                 />
             </div>
-            <div>
-                <h2>Recent Transaction</h2>
-                <table>
+            <div className="recent-container">
+                <h2 className="recent-title">Recent Transaction</h2>
+                <table className="recent-table">
                     <thead>
                         <tr>
                             <th>Date</th>
