@@ -1,6 +1,7 @@
 import { Cards } from "../components/Cards";
 import "./Dashboardpage.css"
 import { useEffect, useState } from "react";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import axios from "axios";
 
 export function DashboardPage() {
@@ -76,7 +77,10 @@ export function DashboardPage() {
                 />
             </div>
             <div className="recent-container">
-                <h2 className="recent-title">Recent Transaction</h2>
+                <div className="recent-header">
+                    <h2 className="recent-title">Recent transactions</h2>
+                    <a href="/Transaction">See all<MdOutlineKeyboardArrowRight /></a>
+                </div>
                 <table className="recent-table">
                     <thead>
                         <tr>

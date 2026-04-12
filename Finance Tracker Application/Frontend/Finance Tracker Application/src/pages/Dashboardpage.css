@@ -16,15 +16,41 @@
     width: 60%;
 }
 
+.recent-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-header a{
+    text-decoration: none;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
 .recent-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.react-table{
+.recent-table{
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.recent-table thead tr th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.recent-table thead tr th:last-child {
+    border-top-right-radius: 10px;
 }
 
 .recent-table thead {
@@ -38,18 +64,15 @@
     color: white;
 }
 
-/* Rows */
 .recent-table td {
     padding: 10px;
     border-top: 1px solid #eee;
 }
 
-/* Hover effect */
 .recent-table tbody tr:hover {
     background: #fafafa;
 }
 
-/* Colors */
 .income-text {
     color: green;
 }
