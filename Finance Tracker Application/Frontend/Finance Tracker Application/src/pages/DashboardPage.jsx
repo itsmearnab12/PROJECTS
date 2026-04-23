@@ -1,4 +1,5 @@
 import { Cards } from "../components/Cards";
+import MoneyFlowChart from "../components/charts/MoneyFlowChart.jsx";
 import "./Dashboardpage.css"
 import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -12,6 +13,7 @@ export function DashboardPage() {
         balance: 0,
     })
     const [recentTransactions, setRecentTransactions] = useState([]);
+    const [transactions, setTransactions] = useState([]); 
 
     useEffect(() => {
         axios.get("http://localhost:4000/api/auth/me", {
@@ -40,6 +42,7 @@ export function DashboardPage() {
         })
             .then((res) => {
                 if (res.data.success) {
+                    setTransactions(res.data.transaction);
                     setRecentTransactions(res.data.transaction.slice(0, 3));
                 }
             })
@@ -75,6 +78,9 @@ export function DashboardPage() {
                     percentage={0}
                     isPositive={true}
                 />
+            </div>
+            <div className="chart-section">
+                <MoneyFlowChart transactions={transactions}/>
             </div>
             <div className="recent-container">
                 <div className="recent-header">
