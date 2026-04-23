@@ -40,7 +40,7 @@ export function DashboardPage() {
         })
             .then((res) => {
                 if (res.data.success) {
-                    setRecentTransactions(res.data.transaction.slice(0, 5));
+                    setRecentTransactions(res.data.transaction.slice(0, 3));
                 }
             })
             .catch((err) => console.log(err));

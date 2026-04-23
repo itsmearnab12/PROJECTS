@@ -12,7 +12,7 @@
     margin-top: 30px;
     padding: 20px;
     border-radius: 30px;
-    border: 1px solid black;
+    border: 1px solid gray;
     width: 60%;
 }
 
@@ -54,14 +54,14 @@
 }
 
 .recent-table thead {
-    background: #A498FF;
+    background: #F5F4FF;
 }
 
 .recent-table th {
     text-align: left;
     padding: 10px;
     font-size: 14px;
-    color: white;
+    color: #8470FF;
 }
 
 .recent-table td {
