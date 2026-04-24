@@ -5,38 +5,41 @@
 
 .title {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .title-subheading {
-    color: gray;
+    color: #9ca3af;
     margin-bottom: 20px;
 }
+
+/* ---------------- TABLE ---------------- */
 
 .transaction-table {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
-    border-radius: 30px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
 .transaction-table th,
 .transaction-table td {
-    padding: 12px 15px;
+    padding: 14px 16px;
     text-align: left;
 }
 
 .transaction-table th {
-    color: #A498FF;
+    color: #7c6cff;
+    font-weight: 500;
 }
 
 .transaction-table thead {
-    background: #ECEAFF;
+    background: #f5f6ff;
 }
 
 .transaction-table tbody tr {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .transaction-table tbody tr:hover {
@@ -44,39 +47,32 @@
 }
 
 .income {
-    color: green;
+    color: #16a34a;
 }
 
 .expense {
-    color: red;
+    color: #dc2626;
 }
 
+/* ---------------- BUTTONS ---------------- */
+
+.add-btn,
 .delete-btn {
-    padding: 7px 15px;
+    padding: 10px 16px;
     border: none;
-    background: #8470ff;
-    color: white;
-    border-radius: 30px;
+    border-radius: 999px;
     cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #7c6cff, #6a5af9);
+    transition: 0.2s;
 }
 
+.add-btn:hover,
 .delete-btn:hover {
-    background: #5a4bd1;
+    opacity: 0.9;
 }
 
-.add-btn {
-    margin-bottom: 15px;
-    padding: 10px 15px;
-    background: #8470ff;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.add-btn:hover {
-    background: #5a4bd1;
-}
+/* ---------------- MODAL ---------------- */
 
 .modal-overlay {
     position: fixed;
@@ -84,7 +80,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,114 +89,102 @@
 
 .modal-content {
     background-color: white;
-    width: 350px;
-    height: auto;
-    border-radius: 30px;
-    padding-bottom: 30px;
+    width: 420px;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
+
+/* ---------------- HEADINGS ---------------- */
+
+.modal-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.modal-content p {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ---------------- FORM ---------------- */
 
 .form-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 0 10px 15px 10px;
+    margin-bottom: 16px;
+    width: 100%;
 }
 
 .form-group label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    margin-left: 10px;
-    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+/* ROW LAYOUT */
+.form-lineone {
+    display: flex;
+    gap: 12px;
 }
 
 .form-lineone .form-group {
     flex: 1;
 }
 
-.form-lineone {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-}
-
-.modal-content h3 {
-    font-size: 20px;
-    padding: 15px 0 10px 0;
-}
-
-.modal-content p {
-    color: gray;
-    font-size: 14px;
-    padding: 0 0 30px 0;
-
-}
-
-.modal-content h3,
-.modal-content p {
-    text-align: center;
-}
-
-.form-lineone input,
-.form-lineone select {
-    border-radius: 30px;
-    padding: 10px;
-    border: 1 solid gray;
+/* INPUTS */
+input,
+select {
     width: 100%;
-    margin: 0;
-    border: 1px solid gray;
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
     outline: none;
-    box-shadow: none;
+    transition: all 0.2s ease;
 }
 
-.form-linetwo input {
-    border-radius: 30px;
-    border: 1px solid gray;
-    outline: none;
-    box-shadow: none;
-    padding: 10px;
-    margin: 0 5px 10px 10px;
-    width: 92%;
+input:hover,
+select:hover {
+    border-color: #c7c9ff;
 }
 
-.form-linethree input {
-    border-radius: 30px;
-    border: 1px solid gray;
-    outline: none;
-    box-shadow: none;
-    padding: 10px;
-    margin: 0 5px 10px 10px;
-    width: 92%;
+input:focus,
+select:focus {
+    border-color: #7c6cff;
+    box-shadow: 0 0 0 3px rgba(124,108,255,0.15);
+    background: #fff;
 }
 
-.form-buttons button {
-    padding: 10px;
-    border-radius: 30px;
-    border: 1px solid gray;
-    outline: none;
-    box-shadow: none;
-    width: 45%;
-    margin: 0 5px;
-}
+/* ---------------- BUTTON GROUP ---------------- */
 
 .form-buttons {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    gap: 12px;
 }
 
-.form-linetwo input,
-.form-linethree input {
-    width: 100% !important;
-    margin: 0 !important;
+.form-buttons button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
 }
 
-.form-savebtn {
-    background-color: #8470ff;
-    color: white;
-}
-
+/* CANCEL */
 .form-cancelbtn {
-    background-color: white;
-    color: black;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* SAVE */
+.form-savebtn {
+    background: linear-gradient(135deg, #7c6cff, #6a5af9);
+    color: white;
 }

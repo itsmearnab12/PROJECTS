@@ -1,3 +1,4 @@
+import "./MoneyFlowChart.css"
 import {
     BarChart,
     Bar,
@@ -34,8 +35,10 @@ const MoneyFlowChart = ({ transactions }) => {
     const data = getMonthlyData(transactions);
 
     return(
-        <div style={{width: "60%", height: 250}}>
-            <h3>Money Flow</h3>
+        <div style={{width: "100%", height: 220}}>
+            <div className="Moneyflow-header">
+                <h3>Money Flow</h3>
+            </div>
 
             <ResponsiveContainer>
                 <BarChart data={data}>
@@ -45,8 +48,8 @@ const MoneyFlowChart = ({ transactions }) => {
                     <Tooltip />
                     <Legend />
 
-                    <Bar dataKey="income" fill="#6C63FF"/>
-                    <Bar dataKey="expense" fill="#64C4FF"/>
+                    <Bar dataKey="income" fill="#7664E4"/>
+                    <Bar dataKey="expense" fill="#BFB7FF"/>
                 </BarChart>
             </ResponsiveContainer>
         </div>
