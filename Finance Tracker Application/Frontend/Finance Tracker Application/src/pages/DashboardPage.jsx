@@ -1,8 +1,8 @@
 import { Cards } from "../components/Cards";
 import MoneyFlowChart from "../components/charts/MoneyFlowChart.jsx";
+import RecentTransactions from "../components/transactions/RecentTransactions.jsx";
 import "./Dashboardpage.css"
 import { useEffect, useState } from "react";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import axios from "axios";
 
 export function DashboardPage() {
@@ -12,8 +12,7 @@ export function DashboardPage() {
         expense: 0,
         balance: 0,
     })
-    const [recentTransactions, setRecentTransactions] = useState([]);
-    const [transactions, setTransactions] = useState([]); 
+    const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:4000/api/auth/me", {
@@ -43,7 +42,6 @@ export function DashboardPage() {
             .then((res) => {
                 if (res.data.success) {
                     setTransactions(res.data.transaction);
-                    setRecentTransactions(res.data.transaction.slice(0, 3));
                 }
             })
             .catch((err) => console.log(err));
@@ -56,7 +54,7 @@ export function DashboardPage() {
             <div className="Cards-block">
                 <Cards
                     title="Total balance"
-                    amount={summary.income}
+                    amount={summary.balance}
                     percentage={0}
                     isPositive={true}
                 />
@@ -80,35 +78,10 @@ export function DashboardPage() {
                 />
             </div>
             <div className="chart-section">
-                <MoneyFlowChart transactions={transactions}/>
+                <MoneyFlowChart transactions={transactions} />
             </div>
-            <div className="recent-container">
-                <div className="recent-header">
-                    <h2 className="recent-title">Recent transactions</h2>
-                    <a href="/Transaction">See all<MdOutlineKeyboardArrowRight /></a>
-                </div>
-                <table className="recent-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Amount</th>
-                            <th>Category</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {recentTransactions.map((t) => (
-                            <tr key={t._id}>
-                                <td>{new Date(t.createdAt).toLocaleDateString()}</td>
-                                <td className={t.type === "income" ? "income-text" : "expense-text"}>
-                                    ₹ {t.amount}
-                                </td>
-                                <td>{t.category}</td>
-                                <td>{t.type}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div>
+                <RecentTransactions transactions={transactions} />
             </div>
         </div>
     );
