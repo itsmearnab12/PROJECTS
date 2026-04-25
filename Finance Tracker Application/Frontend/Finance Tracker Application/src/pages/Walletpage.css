@@ -1,3 +1,16 @@
-.Walletlinechart{
-    max-width: 740px;
+.Walletpage-charts {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.Walletpage-left {
+    flex: 2;   
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Walletpage-right {
+    flex: 1; 
 }

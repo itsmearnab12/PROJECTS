@@ -27,16 +27,14 @@ export function WalletPage() {
                 <h3>Wallet</h3>
                 <h5>Overview of your balance and accounts</h5>
             </div>
-            <div>
-                <div className="Walletlinechart">
+            <div className="Walletpage-charts">
+                <div className="Walletpage-left">
                     <WalletLineChart transactions={transactions} />
-                </div>
-                <div>
                     <RecentTransactions transactions={transactions} />
                 </div>
-            </div>
-            <div>
-                <StatisticsChart transactions={transactions}/>
+                <div className="Walletpage-right">
+                    <StatisticsChart transactions={transactions} />
+                </div>
             </div>
         </>
     );

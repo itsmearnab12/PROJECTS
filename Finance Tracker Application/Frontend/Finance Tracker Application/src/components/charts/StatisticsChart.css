@@ -1,7 +1,9 @@
 .stats-container{
     background: white;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    max-width: 350px;
 }
 
 .chart-wrapper{
