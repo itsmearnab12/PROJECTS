@@ -35,7 +35,7 @@ const MoneyFlowChart = ({ transactions }) => {
     const data = getMonthlyData(transactions);
 
     return(
-        <div style={{width: "100%", height: 220}}>
+        <div style={{width: "100%", height: 180}}>
             <div className="Moneyflow-header">
                 <h3>Money Flow</h3>
             </div>

@@ -1,0 +1,39 @@
+.wallet-chart {
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    margin: 10px 0;
+}
+
+/* Header */
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: gray;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.income {
+    background: #7B61FF;
+}
+
+.expense {
+    background: #C4B5FD;
+}

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import "./Walletpage.css"
 import RecentTransactions from "../components/transactions/RecentTransactions.jsx";
+import WalletLineChart from "../components/charts/WalletLineChart.jsx";
+import StatisticsChart from "../components/charts/StatisticsChart.jsx";
 import axios from "axios";
+
 
 export function WalletPage() {
     const [transactions, setTransactions] = useState([]);
@@ -16,7 +20,7 @@ export function WalletPage() {
             })
             .catch((err) => console.log(err));
     }, []);
-    
+
     return (
         <>
             <div>
@@ -24,7 +28,15 @@ export function WalletPage() {
                 <h5>Overview of your balance and accounts</h5>
             </div>
             <div>
-                <RecentTransactions transactions={transactions} />
+                <div className="Walletlinechart">
+                    <WalletLineChart transactions={transactions} />
+                </div>
+                <div>
+                    <RecentTransactions transactions={transactions} />
+                </div>
+            </div>
+            <div>
+                <StatisticsChart transactions={transactions}/>
             </div>
         </>
     );
