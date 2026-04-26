@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import transactionRouter from "./routes/transactionRoutes.js";
+import goalRoutes from "./routes/goalRoutes.js";
+
 
 //2nd: Create the express app and also define the port number
 const app = express();
@@ -28,6 +30,7 @@ app.use(
 app.get("/", (req, res) => res.send("API Working"));
 app.use("/api/auth", authRouter);
 app.use("/api/transaction", transactionRouter);
+app.use("/api/goals", goalRoutes);
 
 //4th: Creating the link in which the server will run
 app.listen(port, () => console.log(`Server statred on PORT:${port}`));
