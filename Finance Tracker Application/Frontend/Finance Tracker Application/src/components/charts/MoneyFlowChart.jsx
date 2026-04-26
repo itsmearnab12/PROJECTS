@@ -27,15 +27,15 @@ const getMonthlyData = (transactions) => {
             .filter((t) => t.type === "expense")
             .reduce((acc, t) => acc + Number(t.amount), 0);
 
-        return { month, income, expense};
+        return { month, income, expense };
     });
 };
 
 const MoneyFlowChart = ({ transactions }) => {
     const data = getMonthlyData(transactions);
 
-    return(
-        <div style={{width: "100%", height: 180}}>
+    return (
+        <div style={{ width: "100%", height: 180 }}>
             <div className="Moneyflow-header">
                 <h3>Money Flow</h3>
             </div>
@@ -48,8 +48,8 @@ const MoneyFlowChart = ({ transactions }) => {
                     <Tooltip />
                     <Legend />
 
-                    <Bar dataKey="income" fill="#7664E4"/>
-                    <Bar dataKey="expense" fill="#BFB7FF"/>
+                    <Bar dataKey="income" fill="#7664E4" />
+                    <Bar dataKey="expense" fill="#BFB7FF" />
                 </BarChart>
             </ResponsiveContainer>
         </div>

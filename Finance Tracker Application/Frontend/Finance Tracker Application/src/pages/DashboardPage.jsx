@@ -80,7 +80,7 @@ export function DashboardPage() {
             <div className="chart-section">
                 <MoneyFlowChart transactions={transactions} />
             </div>
-            <div>
+            <div className="recettransaction">
                 <RecentTransactions transactions={transactions} />
             </div>
         </div>

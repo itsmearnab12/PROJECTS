@@ -1,7 +1,10 @@
 export function GoalPage(){
     return(
         <>
-        Goal Page
+        <div>
+            <h2>Goals</h2>
+            <h5>Create financial goals and manage your savings</h5>
+        </div>
         </>
     );
 }
