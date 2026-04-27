@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import transactionRouter from "./routes/transactionRoutes.js";
-import goalRoutes from "./routes/goalRoutes.js";
+import goalRoutes from "./routes/goalsRoutes.js";
 
 
 //2nd: Create the express app and also define the port number
