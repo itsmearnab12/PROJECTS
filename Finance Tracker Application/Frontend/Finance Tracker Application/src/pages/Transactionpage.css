@@ -13,8 +13,6 @@
     margin-bottom: 20px;
 }
 
-/* ---------------- TABLE ---------------- */
-
 .transaction-table {
     width: 100%;
     border-collapse: collapse;
@@ -54,8 +52,6 @@
     color: #dc2626;
 }
 
-/* ---------------- BUTTONS ---------------- */
-
 .add-btn,
 .delete-btn {
     padding: 10px 16px;
@@ -71,8 +67,6 @@
 .delete-btn:hover {
     opacity: 0.9;
 }
-
-/* ---------------- MODAL ---------------- */
 
 .modal-overlay {
     position: fixed;

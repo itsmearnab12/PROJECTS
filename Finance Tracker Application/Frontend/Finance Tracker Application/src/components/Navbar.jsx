@@ -36,7 +36,7 @@ export function Navbar() {
                             <NavLink className="link navlink" to="/"><LuLayoutDashboard />Dashboard</NavLink>
                             <NavLink className="link navlink" to="/Transaction"><TbTransactionRupee />Transaction</NavLink>
                             <NavLink className="link navlink" to="/Wallet"><CiWallet />Wallet</NavLink>
-                            <NavLink className="link navlink" to="/Goals"><GoGoal />Goals</NavLink>
+                            {/* <NavLink className="link navlink" to="/Goals"><GoGoal />Goals</NavLink> */}
                             <NavLink className="link navlink" to="/Budget"><FaIndianRupeeSign />Budget</NavLink>
                             <NavLink className="link navlink" to="/Analytics"><SiGoogleanalytics />Analytics</NavLink>
                         </div>

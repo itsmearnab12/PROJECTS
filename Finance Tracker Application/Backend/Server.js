@@ -33,4 +33,4 @@ app.use("/api/transaction", transactionRouter);
 app.use("/api/goals", goalRoutes);
 
 //4th: Creating the link in which the server will run
-app.listen(port, () => console.log(`Server statred on PORT:${port}`));
+app.listen(port, () => console.log(`Server started on PORT:${port}`));
