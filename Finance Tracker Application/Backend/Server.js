@@ -7,6 +7,8 @@ import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import transactionRouter from "./routes/transactionRoutes.js";
 import goalRoutes from "./routes/goalsRoutes.js";
+import budgetRoutes from "./routes/budgetRoutes.js";
+
 
 
 //2nd: Create the express app and also define the port number
@@ -31,6 +33,7 @@ app.get("/", (req, res) => res.send("API Working"));
 app.use("/api/auth", authRouter);
 app.use("/api/transaction", transactionRouter);
 app.use("/api/goals", goalRoutes);
+app.use("/api/budget", budgetRoutes);
 
 //4th: Creating the link in which the server will run
 app.listen(port, () => console.log(`Server started on PORT:${port}`));
