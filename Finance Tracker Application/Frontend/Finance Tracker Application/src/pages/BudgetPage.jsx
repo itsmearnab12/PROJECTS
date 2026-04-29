@@ -114,31 +114,37 @@ export function BudgetPage() {
                     </div>
 
                     <div className="monthly-card">
-                        <h3>Monthly Budget</h3>
+                        <div className="chart-wrapper">
+                            <h3>Monthly Budget</h3>
 
-                        <h2>₹{totalLimit}</h2>
-                        <PieChart width={200} height={200}>
-                            <Pie
-                                data={chartData}
-                                cx="50%"
-                                cy="50%"
-                                innerRadius={60}
-                                outerRadius={80}
-                                dataKey="value"
-                                startAngle={90}
-                                endAngle={-270}
-                            >
-                                <Cell fill="#8470FF" />
-                                <Cell fill="#E5E7EB" />
-                            </Pie>
-                        </PieChart>
+                            <h2>₹{totalLimit}</h2>
+                            <PieChart width={300} height={180}>
+                                <Pie
+                                    data={chartData}
+                                    cx="50%"
+                                    cy="60%"
+                                    startAngle={180}
+                                    endAngle={0}
+                                    innerRadius={70}
+                                    outerRadius={90}
+                                    dataKey="value"
+                                >
+                                    <Cell fill="#8470FF" />
+                                    <Cell fill="#E5E7EB" />
+                                </Pie>
+                            </PieChart>
 
-                        <p>₹{totalSpent} spent</p>
-                        <p>{percentSpent.toFixed(0)}% spent</p>
+                            <p>₹{totalSpent} spent</p>
 
-                        <p className={percentSpent > 80 ? "danger" : "safe"}>
-                            {percentSpent > 80 ? "⚠️ Need attention" : "✅ On track"}
-                        </p>
+                            <p className={percentSpent > 80 ? "danger" : "safe"}>
+                                {percentSpent > 80 ? "⚠️ Need attention" : "✅ On track"}
+                            </p>
+
+                            <div className="chart-center">
+                                <h3>₹{totalRemaining}</h3>
+                                <p>Remaining</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
