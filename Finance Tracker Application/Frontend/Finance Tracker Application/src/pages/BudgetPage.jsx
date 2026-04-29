@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { PieChart, Pie, Cell } from "recharts";
 import axios from "axios";
 import "./Budgetpage.css"
 
@@ -64,6 +65,25 @@ export function BudgetPage() {
         }
     }
 
+    const totalLimit = budgets.reduce(
+        (sum, b) => sum + Number(b.limit || 0),
+        0
+    );
+
+    const totalSpent = budgets.reduce(
+        (sum, b) => sum + Number(b.spent || 0),
+        0
+    );
+
+    const totalRemaining = totalLimit - totalSpent;
+
+    const percentSpent = totalLimit > 0 ? (totalSpent / totalLimit) * 100 : 0;
+
+    const chartData = [
+        { name: "Spent", value: totalSpent },
+        { name: "Remaining", value: totalRemaining },
+    ]
+
     return (
         <>
             <div className="budget-container">
@@ -81,15 +101,45 @@ export function BudgetPage() {
                 </div>
 
                 {/* Budget card */}
-                <div className="budget-grid">
-                    {budgets.map((b) => (
-                        <div key={b._id} className="budget-card">
-                            <h4>{b.title}</h4>
-                            <p>Limit: ₹{b.limit}</p>
-                            <p>Spent: ₹{b.spent}</p>
-                            <p>Remaning: ₹{b.remaning}</p>
-                        </div>
-                    ))}
+                <div className="budget-section">
+                    <div className="budget-grid">
+                        {budgets.map((b) => (
+                            <div key={b._id} className="budget-card">
+                                <h4>{b.title}</h4>
+                                <p>Limit: ₹{b.limit}</p>
+                                <p>Spent: ₹{b.spent}</p>
+                                <p>Remaning: ₹{b.remaning}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="monthly-card">
+                        <h3>Monthly Budget</h3>
+
+                        <h2>₹{totalLimit}</h2>
+                        <PieChart width={200} height={200}>
+                            <Pie
+                                data={chartData}
+                                cx="50%"
+                                cy="50%"
+                                innerRadius={60}
+                                outerRadius={80}
+                                dataKey="value"
+                                startAngle={90}
+                                endAngle={-270}
+                            >
+                                <Cell fill="#8470FF" />
+                                <Cell fill="#E5E7EB" />
+                            </Pie>
+                        </PieChart>
+
+                        <p>₹{totalSpent} spent</p>
+                        <p>{percentSpent.toFixed(0)}% spent</p>
+
+                        <p className={percentSpent > 80 ? "danger" : "safe"}>
+                            {percentSpent > 80 ? "⚠️ Need attention" : "✅ On track"}
+                        </p>
+                    </div>
                 </div>
 
                 {/* Budget form */}
