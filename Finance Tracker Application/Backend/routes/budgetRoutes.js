@@ -1,6 +1,6 @@
 import express from "express";
-import { addBudget, getBudgets } from "../controller.js/budgetController";
-import userAuth from "../middleware/userAuth";
+import { addBudget, getBudgets } from "../controller.js/budgetController.js";
+import userAuth from "../middleware/userAuth.js";
 
 const router = express.Router();
 

@@ -4,7 +4,7 @@ const budgetSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      red: "User",
+      ref: "User",
       required: true,
     },
     title: {
