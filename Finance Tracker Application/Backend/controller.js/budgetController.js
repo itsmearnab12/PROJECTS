@@ -69,3 +69,14 @@ export const getBudgets = async (req, res) => {
     });
   }
 };
+
+//Contoller function for deleting the budget cards
+export const delBudgetcard = async (req, res) => {
+  try {
+    await Budget.findByIdAndDelete(req.params.id);
+
+    res.json({ success: true });
+  } catch (error) {
+    res.json({ success: false, message: error.message });
+  }
+};

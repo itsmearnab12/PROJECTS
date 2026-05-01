@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import axios from "axios";
 import { MostExpenses } from "../components/MostExpenses";
+import { MdOutlineCancel } from "react-icons/md";
 import "./Budgetpage.css"
 
 export function BudgetPage() {
@@ -54,10 +55,10 @@ export function BudgetPage() {
                     withCredentials: true,
                 }
             );
-            console.log("POST RESPONSE:", res.data); // 👈 ADD THIS
+            console.log("POST RESPONSE:", res.data);
 
             if (res.data.success) {
-                fetchBudgets();     // refresh cards
+                fetchBudgets();
                 setShowModel(false);
                 setFormData({ title: "", limit: "" });
             }
@@ -116,10 +117,29 @@ export function BudgetPage() {
                                 { name: "Remaining", value: remaining > 0 ? remaining : 0 },
                             ];
 
-                            return (   // 👈 THIS WAS MISSING
+                            return (
                                 <div key={b._id} className="budget-card">
                                     <div className="budget-card-top">
                                         <h4>{b.title}</h4>
+                                        <button
+                                        className="budgetcard-delbtn"
+                                            onClick={async () => {
+                                                try {
+                                                    const res = await axios.delete(
+                                                        `http://localhost:4000/api/budget/${b._id}`,
+                                                        { withCredentials: true }
+                                                    );
+
+                                                    if (res.data.success) {
+                                                        fetchBudgets();
+                                                    }
+                                                } catch (error) {
+                                                    console.log(error);
+                                                }
+                                            }}
+                                        >
+                                            <MdOutlineCancel />
+                                        </button>
                                     </div>
 
                                     <div className="budget-card-content">
