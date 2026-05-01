@@ -104,14 +104,61 @@ export function BudgetPage() {
                 {/* Budget card */}
                 <div className="budget-section">
                     <div className="budget-grid">
-                        {budgets.map((b) => (
-                            <div key={b._id} className="budget-card">
-                                <h4>{b.title}</h4>
-                                <p>Limit: ₹{b.limit}</p>
-                                <p>Spent: ₹{b.spent}</p>
-                                <p>Remaning: ₹{b.remaning}</p>
-                            </div>
-                        ))}
+                        {budgets.map((b) => {
+                            const spent = Number(b.spent || 0);
+                            const limit = Number(b.limit || 0);
+                            const remaining = limit - spent;
+
+                            const percentSpent = limit > 0 ? Math.min((spent / limit) * 100, 100) : 0;
+
+                            const cardChartData = [
+                                { name: "Spent", value: spent },
+                                { name: "Remaining", value: remaining > 0 ? remaining : 0 },
+                            ];
+
+                            return (   // 👈 THIS WAS MISSING
+                                <div key={b._id} className="budget-card">
+                                    <div className="budget-card-top">
+                                        <h4>{b.title}</h4>
+                                    </div>
+
+                                    <div className="budget-card-content">
+                                        <div className="mini-chart-wrapper">
+                                            <PieChart width={110} height={110}>
+                                                <Pie
+                                                    data={cardChartData}
+                                                    cx="50%"
+                                                    cy="50%"
+                                                    innerRadius={38}
+                                                    outerRadius={48}
+                                                    dataKey="value"
+                                                >
+                                                    <Cell fill="#8470FF" />
+                                                    <Cell fill="#ECE9FF" />
+                                                </Pie>
+                                            </PieChart>
+
+                                            <div className="mini-chart-center">
+                                                <p>{Math.round(percentSpent)}%</p>
+                                                <span>spent</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="budget-details">
+                                            <p className="remaining-label">Left</p>
+                                            <h3>₹{remaining}</h3>
+                                            <p className="limit-text">/₹{limit}</p>
+
+                                            <p className={percentSpent > 80 ? "danger" : "safe"}>
+                                                {percentSpent > 80
+                                                    ? "⚠ Need attention"
+                                                    : "✅ On track"}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
 
                     <div className="Budget-section-two">
