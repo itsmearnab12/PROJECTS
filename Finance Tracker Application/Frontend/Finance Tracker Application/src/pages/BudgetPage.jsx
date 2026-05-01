@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import axios from "axios";
+import { MostExpenses } from "../components/MostExpenses";
 import "./Budgetpage.css"
 
 export function BudgetPage() {
@@ -113,37 +114,42 @@ export function BudgetPage() {
                         ))}
                     </div>
 
-                    <div className="monthly-card">
-                        <div className="chart-wrapper">
-                            <h3>Monthly Budget</h3>
+                    <div className="Budget-section-two">
+                        <div className="monthly-card">
+                            <div className="chart-wrapper">
+                                <h3>Monthly Budget</h3>
 
-                            <h2>₹{totalLimit}</h2>
-                            <PieChart width={300} height={180}>
-                                <Pie
-                                    data={chartData}
-                                    cx="50%"
-                                    cy="60%"
-                                    startAngle={180}
-                                    endAngle={0}
-                                    innerRadius={70}
-                                    outerRadius={90}
-                                    dataKey="value"
-                                >
-                                    <Cell fill="#8470FF" />
-                                    <Cell fill="#E5E7EB" />
-                                </Pie>
-                            </PieChart>
+                                <h2>₹{totalLimit}</h2>
+                                <PieChart width={300} height={180}>
+                                    <Pie
+                                        data={chartData}
+                                        cx="50%"
+                                        cy="60%"
+                                        startAngle={180}
+                                        endAngle={0}
+                                        innerRadius={70}
+                                        outerRadius={90}
+                                        dataKey="value"
+                                    >
+                                        <Cell fill="#8470FF" />
+                                        <Cell fill="#E5E7EB" />
+                                    </Pie>
+                                </PieChart>
 
-                            <p>₹{totalSpent} spent</p>
+                                <p>₹{totalSpent} spent</p>
 
-                            <p className={percentSpent > 80 ? "danger" : "safe"}>
-                                {percentSpent > 80 ? "⚠️ Need attention" : "✅ On track"}
-                            </p>
+                                <p className={percentSpent > 80 ? "danger" : "safe"}>
+                                    {percentSpent > 80 ? "⚠️ Need attention" : "✅ On track"}
+                                </p>
 
-                            <div className="chart-center">
-                                <h3>₹{totalRemaining}</h3>
-                                <p>Remaining</p>
+                                <div className="chart-center">
+                                    <h3>₹{totalRemaining}</h3>
+                                    <p>Remaining</p>
+                                </div>
                             </div>
+                        </div>
+                        <div>
+                            <MostExpenses />
                         </div>
                     </div>
                 </div>
