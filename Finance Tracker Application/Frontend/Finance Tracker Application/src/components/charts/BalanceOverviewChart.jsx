@@ -8,43 +8,59 @@ import {
   CartesianGrid,
 } from "recharts";
 
-// ✅ FIXED: Safe data processing
 const processChartData = (transactions = []) => {
-  // 🛡️ Safety check
   if (!Array.isArray(transactions)) return [];
 
-  const grouped = {};
+  const currentMonth = new Date().getMonth();
+  const currentYear = new Date().getFullYear();
+
+  const current = {};
+  const previous = {};
 
   transactions.forEach((t) => {
-    if (!t?.date || !t?.amount) return; // 🛡️ skip bad data
+    if (!t?.createdAt || t.amount == null) return;
 
-    const date = new Date(t.date).toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "short",
-    });
+    const d = new Date(t.createdAt);
+    if (isNaN(d)) return;
 
-    if (!grouped[date]) {
-      grouped[date] = 0;
+    const day = d.getDate(); // 1–31
+    const month = d.getMonth();
+    const year = d.getFullYear();
+
+    let value = t.type === "income"
+      ? Number(t.amount)
+      : -Number(t.amount);
+
+    // current month
+    if (month === currentMonth && year === currentYear) {
+      current[day] = (current[day] || 0) + value;
     }
 
-    if (t.type === "income") {
-      grouped[date] += t.amount;
-    } else {
-      grouped[date] -= t.amount;
+    // previous month
+    if (month === currentMonth - 1 && year === currentYear) {
+      previous[day] = (previous[day] || 0) + value;
     }
   });
 
-  return Object.keys(grouped).map((date) => ({
-    date,
-    amount: grouped[date],
+  const days = Array.from(
+    new Set([...Object.keys(current), ...Object.keys(previous)])
+  ).sort((a, b) => a - b);
+
+  return days.map((day) => ({
+    date: `Day ${day}`,
+    current: current[day] || 0,
+    previous: previous[day] || 0,
   }));
 };
 
 export function BalanceOverviewChart({ transactions = [] }) {
   const data = processChartData(transactions);
 
+  console.log("RAW transactions:", transactions);
+  console.log("PROCESSED data:", data);
+
   return (
-    <ResponsiveContainer width="100%" height={250}>
+    <ResponsiveContainer width="100%" height={200}>
       <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
 
@@ -55,9 +71,18 @@ export function BalanceOverviewChart({ transactions = [] }) {
 
         <Line
           type="monotone"
-          dataKey="amount"
+          dataKey="current"
           stroke="#7c5cff"
           strokeWidth={3}
+          dot={false}
+        />
+
+        <Line
+          type="monotone"
+          dataKey="previous"
+          stroke="#7c5cff"
+          strokeDasharray="5 5"
+          strokeWidth={2}
           dot={false}
         />
       </LineChart>
