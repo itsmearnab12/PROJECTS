@@ -91,4 +91,19 @@ p span {
     .image-box{
         display: none;
     }
+
+    .form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-box{
+        margin-left: 0;
+    }
+
+    .form-box h1{
+        margin: 20px 0;
+        font-size: 30px;
+    }
 }
