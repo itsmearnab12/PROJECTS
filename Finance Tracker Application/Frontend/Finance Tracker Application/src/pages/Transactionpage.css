@@ -132,7 +132,7 @@
 }
 
 /* INPUTS */
-input,
+/* input,
 select {
     width: 100%;
     padding: 12px 14px;
@@ -141,7 +141,7 @@ select {
     background: #f9fafb;
     outline: none;
     transition: all 0.2s ease;
-}
+} */
 
 input:hover,
 select:hover {
@@ -154,8 +154,6 @@ select:focus {
     box-shadow: 0 0 0 3px rgba(124,108,255,0.15);
     background: #fff;
 }
-
-/* ---------------- BUTTON GROUP ---------------- */
 
 .form-buttons {
     margin-top: 20px;
@@ -171,13 +169,11 @@ select:focus {
     cursor: pointer;
 }
 
-/* CANCEL */
 .form-cancelbtn {
     background: #f3f4f6;
     color: #374151;
 }
 
-/* SAVE */
 .form-savebtn {
     background: linear-gradient(135deg, #7c6cff, #6a5af9);
     color: white;

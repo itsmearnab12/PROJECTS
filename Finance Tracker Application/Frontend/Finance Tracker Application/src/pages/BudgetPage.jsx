@@ -37,7 +37,6 @@ export function BudgetPage() {
     }, []);
 
 
-    //Handle input
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -45,7 +44,6 @@ export function BudgetPage() {
         });
     };
 
-    //Submit form
     const handleSubmit = async () => {
         try {
             const res = await axios.post(
@@ -102,7 +100,6 @@ export function BudgetPage() {
                     </button>
                 </div>
 
-                {/* Budget card */}
                 <div className="budget-section">
                     <div className="budget-grid">
                         {budgets.map((b) => {
@@ -221,7 +218,6 @@ export function BudgetPage() {
                     </div>
                 </div>
 
-                {/* Budget form */}
                 {showModel && (
                     <div className="Budget-model">
                         <div className="Budget-model-content">

@@ -13,8 +13,8 @@
 }
 
 .form-box {
-    padding: 30px 20px;
-    width: 370px;
+    padding: 30px 10px;
+    width: 340px;
     border-radius: 10px;
     text-align: center;
     background: transparent;
@@ -41,9 +41,9 @@
 
 .form-details {
     display: flex;
-    align-items: flex-start;
-    border: 1px solid gray;
-    padding: 8px 10px;
+    align-items: center;
+    border: 1px solid #cfcfcf;
+    padding: 2px 12px;
     border-radius: 30px;
     background-color: white;
 }
@@ -51,9 +51,15 @@
 .form-details input {
     border: none;
     outline: none;
-    flex: 1;
+    width: 100%;
     font-size: 14px;
     background: transparent;
+    padding: 5px 2px;
+}
+
+.form-details input:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .loginpage-btn button {
