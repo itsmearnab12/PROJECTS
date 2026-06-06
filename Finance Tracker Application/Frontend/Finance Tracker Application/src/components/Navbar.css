@@ -60,3 +60,48 @@
 .Navbar-btn:hover {
     cursor: pointer;
 }
+
+.mobile-header {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: #eceaff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+    }
+
+    .mobile-header h3 {
+        margin: 0;
+    }
+
+    .menu-btn {
+        border: none;
+        background: none;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .Navigation-header {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 250px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+    .Navigation-header.open {
+        left: 0;
+    }
+}

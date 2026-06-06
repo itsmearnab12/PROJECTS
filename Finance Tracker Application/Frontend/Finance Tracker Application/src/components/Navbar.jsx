@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./Navbar.css"
 import axios from "axios";
 
@@ -9,10 +10,17 @@ import { GoGoal } from "react-icons/go";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { SiGoogleanalytics } from "react-icons/si";
 import { TbLogout } from "react-icons/tb";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 
 export function Navbar() {
     const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    }
 
     const handleLogout = async () => {
         try {
@@ -28,8 +36,15 @@ export function Navbar() {
 
     return (
         <>
+            <div className="mobile-header">
+                <h3>FinSet</h3>
+
+                <button className="menu-btn" onClick={toggleMenu}>
+                    {isOpen ? <IoClose /> : <HiOutlineMenuAlt3 />}
+                </button>
+            </div>
             <header>
-                <div className="Navigation-header">
+                <div className={`Navigation-header ${isOpen ? "open" : ""}`}>
                     <h3>FinSet</h3>
                     <div className="Navigation-bar">
                         <div className="navigation-button">
