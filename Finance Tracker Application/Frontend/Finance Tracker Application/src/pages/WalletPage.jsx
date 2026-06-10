@@ -23,17 +23,19 @@ export function WalletPage() {
 
     return (
         <>
-            <div>
-                <h3>Wallet</h3>
-                <h5>Overview of your balance and accounts</h5>
-            </div>
-            <div className="Walletpage-charts">
-                <div className="Walletpage-left">
-                    <WalletLineChart transactions={transactions} />
-                    <RecentTransactions transactions={transactions} />
+            <div className="Wallet-header">
+                <div>
+                    <h3>Wallet</h3>
+                    <h5>Overview of your balance and accounts</h5>
                 </div>
-                <div className="Walletpage-right">
-                    <StatisticsChart transactions={transactions} />
+                <div className="Walletpage-charts">
+                    <div className="Walletpage-left">
+                        <WalletLineChart transactions={transactions} />
+                        <RecentTransactions transactions={transactions} />
+                    </div>
+                    <div className="Walletpage-right">
+                        <StatisticsChart transactions={transactions} />
+                    </div>
                 </div>
             </div>
         </>
