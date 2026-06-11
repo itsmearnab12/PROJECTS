@@ -16,7 +16,7 @@ const RecentTransactions = ({ transactions = [], limit = 3 }) => {
                         <th>Date</th>
                         <th>Amount</th>
                         <th>Category</th>
-                        <th>Type</th>
+                        <th className="type-column">Type</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@ const RecentTransactions = ({ transactions = [], limit = 3 }) => {
                                 ₹ {t.amount}
                             </td>
                             <td>{t.category}</td>
-                            <td>{t.type}</td>
+                            <td className="type-column">{t.type}</td>
                         </tr>
                     ))}
                 </tbody>
