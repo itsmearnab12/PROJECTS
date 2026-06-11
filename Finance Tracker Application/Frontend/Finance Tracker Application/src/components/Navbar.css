@@ -25,10 +25,6 @@
     margin: 25px;
 }
 
-.Navigation-bar button {
-    font-size: 17px;
-}
-
 .navlink {
     display: flex;
     margin: 20px;
@@ -83,30 +79,48 @@
         left: 0;
         right: 0;
         z-index: 1001;
+        width: 100%;
+        height: 150px;
     }
 
     .mobile-header h3 {
         margin: 0;
+        font-size: 45px;
     }
 
     .menu-btn {
         border: none;
         background: none;
-        font-size: 30px;
+        font-size: 55px;
         cursor: pointer;
     }
 
     .Navigation-header {
         position: fixed;
         top: 0;
-        left: -260px;
-        width: 250px;
-        height: 100vh;
+        left: -330px;
         z-index: 1000;
         transition: left 0.3s ease;
+         width: 50%;
+        height: 100%;
     }
 
     .Navigation-header.open {
         left: 0;
+    }
+
+    .Navigation-bar{
+        margin: 100px 24px;
+    }
+
+    .Navigation-bar button{
+        font-size: 28px;
+        margin: 0 50px;
+    }
+
+    .navlink{
+        font-size: 28px;
+        margin: 40px 20px;
+        padding: 15px;
     }
 }

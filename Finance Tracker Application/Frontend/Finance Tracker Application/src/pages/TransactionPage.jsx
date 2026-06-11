@@ -19,7 +19,6 @@ export function TransactionPage() {
         .then((res) => {
             console.log("GET RESPONSE:", res.data);
 
-            // ✅ FIX: always ensure array
             setTransactions(res.data.transaction || []);
         })
         .catch((err) => console.log(err));
@@ -36,7 +35,7 @@ export function TransactionPage() {
             console.log("POST RESPONSE:", res.data);
 
             if (res.data.success) {
-                // ✅ FIX: add single transaction correctly
+               
                 setTransactions((prev) => [
                     res.data.transaction,
                     ...prev,
