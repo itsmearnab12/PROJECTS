@@ -54,59 +54,61 @@ export function AnalyticsPage() {
     }, [])
     return (
         <>
-            <div className="analytics-cards">
-                <Cards
-                    title="Total Balance"
-                    amount={summary.balance}
-                    percentage={0}
-                    isPositive={true}
-                    subtitle="Compared to last month"
-                />
+            <div className="page-container">
+                <div className="analytics-cards">
+                    <Cards
+                        title="Total Balance"
+                        amount={summary.balance}
+                        percentage={0}
+                        isPositive={true}
+                        subtitle="Compared to last month"
+                    />
 
-                <Cards
-                    title="Income"
-                    amount={summary.income}
-                    percentage={0}
-                    isPositive={true}
-                    subtitle="Compared to last month"
-                />
+                    <Cards
+                        title="Income"
+                        amount={summary.income}
+                        percentage={0}
+                        isPositive={true}
+                        subtitle="Compared to last month"
+                    />
 
-                <Cards
-                    title="Expense"
-                    amount={summary.expense}
-                    percentage={0}
-                    isPositive={false}
-                    subtitle="Compared to last month"
-                />
-            </div>
-            <div className="analytics-main">
-                <div className="analytics-left">
-                    <div className="chart-box">
-                        <h3>Total Balance Overview</h3>
-                        <BalanceOverviewChart transactions={transactions} />
-                    </div>
-
-                    <div className="chart-box">
-                        <h3>Comparing Budget and Expense</h3>
-                        <BudgetVsExpenseChart
-                            transactions={transactions}
-                            budgets={budgets}
-                        />
-                    </div>
+                    <Cards
+                        title="Expense"
+                        amount={summary.expense}
+                        percentage={0}
+                        isPositive={false}
+                        subtitle="Compared to last month"
+                    />
                 </div>
-
-                <div className="analytics-right">
-                    <div className="chart-box">
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <h3>Statistics</h3>
-
-                            <select value={type} onChange={(e) => setType(e.target.value)}>
-                                <option value="expense">Expense</option>
-                                <option value="income">Income</option>
-                            </select>
+                <div className="analytics-main">
+                    <div className="analytics-left">
+                        <div className="chart-box">
+                            <h3>Total Balance Overview</h3>
+                            <BalanceOverviewChart transactions={transactions} />
                         </div>
 
-                        <StatisticsChartincomeexpense transactions={transactions} type={type} />
+                        <div className="chart-box">
+                            <h3>Comparing Budget and Expense</h3>
+                            <BudgetVsExpenseChart
+                                transactions={transactions}
+                                budgets={budgets}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="analytics-right">
+                        <div className="chart-box">
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                <h3>Statistics</h3>
+
+                                <select value={type} onChange={(e) => setType(e.target.value)}>
+                                    <option value="expense">Expense</option>
+                                    <option value="income">Income</option>
+                                </select>
+                            </div>
+
+                            <StatisticsChartincomeexpense transactions={transactions} type={type} />
+                        </div>
                     </div>
                 </div>
             </div>

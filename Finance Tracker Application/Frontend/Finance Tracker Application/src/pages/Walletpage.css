@@ -1,7 +1,3 @@
-.Wallet-header{
-    margin-left: 250px;
-    padding: 20px;
-}
 .Walletpage-charts {
     display: flex;
     gap: 20px;
@@ -9,12 +5,18 @@
 }
 
 .Walletpage-left {
-    flex: 2;   
+    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .Walletpage-right {
-    flex: 1; 
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .Walletpage-charts {
+        flex-direction: column;
+    }
 }

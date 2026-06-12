@@ -31,3 +31,9 @@
   width: 350px;
   height: 100%;
 }
+
+@media (max-width: 768px) {
+  .analytics-main{
+    flex-direction: column;
+  }
+}

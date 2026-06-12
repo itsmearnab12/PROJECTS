@@ -49,7 +49,7 @@ export function DashboardPage() {
     }, []);
 
     return (
-        <div className="dashboard-header">
+        <div className="page-container">
             <h1>Welcome {user ? user.name : "User"} to Fintech</h1>
             <p>It is the best time to manage your finance</p>
             <div className="Cards-block">

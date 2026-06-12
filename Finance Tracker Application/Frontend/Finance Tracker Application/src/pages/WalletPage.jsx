@@ -23,7 +23,7 @@ export function WalletPage() {
 
     return (
         <>
-            <div className="Wallet-header">
+            <div className="page-container">
                 <div>
                     <h3>Wallet</h3>
                     <h5>Overview of your balance and accounts</h5>
