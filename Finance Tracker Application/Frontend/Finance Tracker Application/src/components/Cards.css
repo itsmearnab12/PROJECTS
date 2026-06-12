@@ -1,31 +1,31 @@
 .card {
-    flex: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid gray;
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid gray;
 }
 
-.card-title{
-    color: #666;
-    font-size: 14px;
-    font-weight: 500;
+.card-title {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.card-amount{
-    margin: 10px 0;
-    font-size: 26px;
-    font-weight: bold;
+.card-amount {
+  margin: 10px 0;
+  font-size: 26px;
+  font-weight: bold;
 }
 
-.card-change{
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 13px;
-    margin-top: 5px;
+.card-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 .card-change.positive {

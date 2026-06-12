@@ -19,11 +19,26 @@
     border-radius: 30px;
     padding: 20px;
     margin: 10px 0;
-    max-width: 730px;
+    max-width: 100%;
 }
 
 .recettransaction {
-    width: 60%;
+    width: 100%;
+}
+
+.dashboardpage-charts {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.left-column {
+    flex: 2;
+}
+
+.right-column {
+    flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -54,11 +69,20 @@
         scroll-snap-align: start;
     }
 
-    .recettransaction{
+    .dashboardpage-charts {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
         width: 100%;
     }
 
-    .chart-section{
-       margin: 0 0 20px 0;
+    .recettransaction {
+        width: 100%;
+    }
+
+    .chart-section {
+        margin: 0 0 20px 0;
     }
 }

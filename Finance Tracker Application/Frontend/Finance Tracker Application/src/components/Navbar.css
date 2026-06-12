@@ -101,7 +101,7 @@
         left: -330px;
         z-index: 1000;
         transition: left 0.3s ease;
-         width: 50%;
+        width: 50%;
         height: 100%;
     }
 
@@ -109,18 +109,17 @@
         left: 0;
     }
 
-    .Navigation-bar{
+    .Navigation-bar {
         margin: 100px 24px;
     }
 
-    .Navigation-bar button{
-        font-size: 28px;
-        margin: 0 50px;
+    .Navigation-bar button {
+        font-size: 25px;
     }
 
-    .navlink{
-        font-size: 28px;
-        margin: 0px 20px;
+    .navlink {
+        font-size: 25px;
+        margin: 25px 0;
         padding: 15px;
     }
 }

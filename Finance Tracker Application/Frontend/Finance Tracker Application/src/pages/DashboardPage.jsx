@@ -1,6 +1,7 @@
 import { Cards } from "../components/Cards";
 import MoneyFlowChart from "../components/charts/MoneyFlowChart.jsx";
 import RecentTransactions from "../components/transactions/RecentTransactions.jsx";
+import StatisticsChart from "../components/charts/StatisticsChart.jsx";
 import "./Dashboardpage.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -77,11 +78,20 @@ export function DashboardPage() {
                     isPositive={true}
                 />
             </div>
-            <div className="chart-section">
-                <MoneyFlowChart transactions={transactions} />
-            </div>
-            <div className="recettransaction">
-                <RecentTransactions transactions={transactions} />
+            <div className="dashboardpage-charts">
+                <div className="left-column">
+                    <div className="chart-section">
+                        <MoneyFlowChart transactions={transactions} />
+                    </div>
+                    <div className="recettransaction">
+                        <RecentTransactions transactions={transactions} />
+                    </div>
+                </div>
+                <div className="right-column">
+                    <div className="dashboardpage-right">
+                        <StatisticsChart transactions={transactions} />
+                    </div>
+                </div>
             </div>
         </div>
     );
