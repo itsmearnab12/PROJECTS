@@ -55,6 +55,10 @@ export function AnalyticsPage() {
     return (
         <>
             <div className="page-container">
+                <div className="analytics-header">
+                    <h1>Analytics</h1>
+                    <p>Track your financial performance and spending habits.</p>
+                </div>
                 <div className="analytics-cards">
                     <Cards
                         title="Total Balance"

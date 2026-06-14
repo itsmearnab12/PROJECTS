@@ -1,11 +1,25 @@
-.analytics-cards{
-    display: flex;
-    gap: 10px;
-    margin: 10px 0;
+.analytics-header {
+  margin-bottom: 20px;
 }
-.analytics-main{
-    display: flex;
-    gap: 20px;
+
+.analytics-header p {
+  color: gray;
+}
+
+.analytics-cards {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.analytics-main {
+  display: flex;
+  gap: 20px;
 }
 
 .chart-box {
@@ -22,18 +36,43 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 0;  
+  min-width: 0;
 }
 
-.analytics-right
-.chart-box {
+.analytics-right .chart-box {
   flex: 1;
-  width: 350px;
+  width: 380px;
   height: 100%;
 }
 
 @media (max-width: 768px) {
-  .analytics-main{
+  .analytics-main {
     flex-direction: column;
   }
+
+  .analytics-cards {
+    /* display: flex;
+    gap: 10px; */
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+
+    /* -ms-overflow-style: none; */
+    scrollbar-width: none;
+    margin: 0 0 20px 0;
+  }
+
+  .analytics-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .analytics-cards>* {
+    flex: 0 0 50%;
+    scroll-snap-align: start;
+  }
+
+  .analytics-right {
+    height: 400px;
+    width: 100%;
+  }
+
 }

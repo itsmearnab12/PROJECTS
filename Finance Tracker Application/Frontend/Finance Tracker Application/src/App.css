@@ -5,13 +5,13 @@
 
 .page-content{
     flex: 1;
-    padding: 20px;
 }
 
 .page-container {
     margin-left: 250px;
-    padding: 20px;
+    padding: 0 20px;
 }
+
 
 @media (max-width: 768px) {
     .page-container {

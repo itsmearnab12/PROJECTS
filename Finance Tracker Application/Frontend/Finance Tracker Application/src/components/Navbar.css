@@ -101,8 +101,8 @@
         left: -330px;
         z-index: 1000;
         transition: left 0.3s ease;
-        width: 70%;
         height: 100%;
+        width: 70%;
         max-width: 280px;
     }
 
@@ -118,23 +118,12 @@
         font-size: 25px;
     }
 
-
-    
     .navlink {
         font-size: 25px;
         margin: 25px 0;
         padding: 15px;
+
+      
     }
 
-    .navlink {
-        font-size: 25px !important;
-    }
-
-    .Navbar-btn {
-        font-size: 25px !important;
-    }
-
-    .Navigation-header h3 {
-        font-size: 30px !important;
-    }
 }

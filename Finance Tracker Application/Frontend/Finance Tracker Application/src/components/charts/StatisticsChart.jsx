@@ -32,12 +32,12 @@ const StatisticsChart = ({ transactions }) => {
         <div className="stats-container">
             <h3>Statistics</h3>
             <div className="chart-wrapper">
-                <ResponsiveContainer width="100%" height={350}>
+                <ResponsiveContainer width="100%" height={245}>
                     <PieChart>
                         <Pie
                             data={data}
-                            innerRadius={70}
-                            outerRadius={90}
+                            innerRadius={55}
+                            outerRadius={75}
                             paddingAngle={3}
                             cornerRadius={10}
                             dataKey="value"

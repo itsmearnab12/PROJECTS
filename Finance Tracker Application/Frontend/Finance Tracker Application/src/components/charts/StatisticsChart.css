@@ -1,11 +1,14 @@
 .stats-container{
     background: white;
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 30px;
     border: 1px solid gray;
     max-width: 100%;
 }
-
+.stats-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
 .chart-wrapper{
     position: relative;
 }
@@ -19,19 +22,22 @@
 }
 
 .center-text p{
-    font-size: 12px;
+    font-size: 11px;
     color: gray;
+    margin: 0 0 2px 0; 
 }
 
 .center-text h2{
+    font-size: 20px; 
     margin: 0;
 }
 
 .stats-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 14px;
+    align-items: center;
+    margin-bottom: 6px; 
+    font-size: 13px; 
 }
 
 .dot{
