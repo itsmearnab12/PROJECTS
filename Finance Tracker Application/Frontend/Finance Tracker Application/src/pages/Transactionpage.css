@@ -1,120 +1,161 @@
- .transaction-container {
+.transaction-container {
     margin-left: 250px;
-    padding: 20px;
+    padding: 25px;
 }
 
 .title {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 5px;
 }
 
 .title-subheading {
-    color: #9ca3af;
+    color: #6b7280;
     margin-bottom: 20px;
+}
+
+.add-btn {
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 12px 22px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg,
+            #7c6cff,
+            #5b46ff);
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+}
+
+.transaction-card {
+    background: white;
+    border-radius: 24px;
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .transaction-table {
     width: 100%;
+    min-width: 900px;
     border-collapse: collapse;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.transaction-table th,
-.transaction-table td {
-    padding: 14px 16px;
-    text-align: left;
-}
-
-.transaction-table th {
-    color: #7c6cff;
-    font-weight: 500;
 }
 
 .transaction-table thead {
-    background: #f5f6ff;
+    background: #f8f7ff;
+}
+
+.transaction-table th {
+    padding: 18px 20px;
+    text-align: left;
+    color: #7c6cff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.transaction-table td {
+    padding: 20px;
+    color: #111827;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .transaction-table tbody tr {
-    border-bottom: 1px solid #f1f1f1;
+    transition: 0.3s;
 }
 
 .transaction-table tbody tr:hover {
-    background: #fafafa;
+    background: #fafaff;
 }
 
-.income {
+.amount {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.income-amount {
     color: #16a34a;
 }
 
-.expense {
-    color: #dc2626;
+.expense-amount {
+    color: #ef4444;
 }
 
-.add-btn,
-.delete-btn {
-    padding: 10px 16px;
-    border: none;
+.category-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: #f3f0ff;
+    color: #6d5dfc;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 6px 14px;
     border-radius: 999px;
-    cursor: pointer;
-    color: white;
-    background: linear-gradient(135deg, #7c6cff, #6a5af9);
-    transition: 0.2s;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
 }
 
-.add-btn:hover,
+.income-badge {
+    color: #16a34a;
+    background: #dcfce7;
+}
+
+.expense-badge {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.delete-btn {
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: #ef4444;
+    background: #fef2f2;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
 .delete-btn:hover {
-    opacity: 0.9;
+    background: #ef4444;
+    color: white;
 }
 
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .modal-content {
-    background-color: white;
-    width: 370px;
+    width: 420px;
+    background: white;
     border-radius: 20px;
     padding: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .modal-content h3 {
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 6px;
-}
-
-.modal-content p {
-    text-align: center;
-    color: #9ca3af;
-    font-size: 14px;
     margin-bottom: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    width: 100%;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    color: #374151;
+    color: #111827;
 }
 
 .form-lineone {
@@ -122,43 +163,103 @@
     gap: 12px;
 }
 
-.form-lineone .form-group {
-    flex: 1;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
 }
 
-input:hover,
-select:hover {
-    border-color: #c7c9ff;
+.form-group label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
 }
 
-input:focus,
-select:focus {
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
     border-color: #7c6cff;
-    box-shadow: 0 0 0 3px rgba(124,108,255,0.15);
-    background: #fff;
+    box-shadow: 0 0 0 3px rgba(124, 108, 255, 0.15);
 }
 
 .form-buttons {
-    margin-top: 20px;
     display: flex;
     gap: 12px;
+    margin-top: 15px;
 }
 
 .form-buttons button {
     flex: 1;
     padding: 12px;
-    border-radius: 999px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
+    font-weight: 600;
 }
 
-.form-cancelbtn {
+.cancel-btn {
     background: #f3f4f6;
     color: #374151;
 }
 
-.form-savebtn {
-    background: linear-gradient(135deg, #7c6cff, #6a5af9);
+.save-btn {
     color: white;
+    background: linear-gradient(135deg,
+            #7c6cff,
+            #5b46ff);
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c4bdbd;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c4bdbd;
+}
+
+
+@media (max-width: 768px) {
+    .transaction-container {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .transaction-card {
+        overflow-x: auto;
+    }
+
+    .transaction-table {
+        min-width: 850px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .form-lineone {
+        flex-direction: column;
+    }
+}
