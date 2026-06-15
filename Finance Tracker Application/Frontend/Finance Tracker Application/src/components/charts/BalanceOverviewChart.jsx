@@ -23,7 +23,7 @@ const processChartData = (transactions = []) => {
     const d = new Date(t.createdAt);
     if (isNaN(d)) return;
 
-    const day = d.getDate(); // 1–31
+    const day = d.getDate();
     const month = d.getMonth();
     const year = d.getFullYear();
 
@@ -62,10 +62,23 @@ export function BalanceOverviewChart({ transactions = [] }) {
   return (
     <ResponsiveContainer width="100%" height={200}>
       <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
+        {/* <CartesianGrid strokeDasharray="3 3" /> */}
+        <CartesianGrid
+          vertical={false}
+          stroke="#f1f5f9"
+        />
 
-        <XAxis dataKey="date" />
-        <YAxis />
+        {/* <XAxis dataKey="date" /> */}
+        <XAxis
+          dataKey="date"
+          axisLine={false}
+          tickLine={false}
+        />
+        {/* <YAxis /> */}
+        <YAxis
+          axisLine={false}
+          tickLine={false}
+        />
 
         <Tooltip />
 

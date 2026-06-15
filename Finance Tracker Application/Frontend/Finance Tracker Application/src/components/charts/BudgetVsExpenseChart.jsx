@@ -10,7 +10,7 @@ import {
 } from "recharts";
 
 const processBudgetExpenseData = (transactions = [], budgets = []) => {
-  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   const result = {};
 
@@ -75,10 +75,23 @@ export function BudgetVsExpenseChart({ transactions = [], budgets = [] }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart data={data} barGap={10}>
-        <CartesianGrid strokeDasharray="3 3" />
+        {/* <CartesianGrid strokeDasharray="3 3" /> */}
+        <CartesianGrid
+          vertical={false}
+          stroke="#f1f5f9"
+        />
 
-        <XAxis dataKey="month" />
-        <YAxis />
+        {/* <XAxis dataKey="month" /> */}
+        <XAxis
+          dataKey="month"
+          axisLine={false}
+          tickLine={false}
+        />
+        {/* <YAxis /> */}
+        <YAxis
+          axisLine={false}
+          tickLine={false}
+        />
 
         <Tooltip content={<CustomTooltip />} />
 
@@ -88,8 +101,8 @@ export function BudgetVsExpenseChart({ transactions = [], budgets = [] }) {
               key={index}
               fill={
                 entry.expense > entry.budget
-                  ? "#FF6B6B"   
-                  : "#6C63FF"   
+                  ? "#FF6B6B"
+                  : "#6C63FF"
               }
             />
           ))}
