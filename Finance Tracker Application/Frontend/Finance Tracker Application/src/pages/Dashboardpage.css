@@ -9,12 +9,26 @@
     gap: 10px;
 }
 
-.chart-section {
+/* .chart-section {
     border: 1px solid gray;
     border-radius: 30px;
     padding: 20px;
     margin: 10px 0;
     max-width: 100%;
+} */
+.chart-section {
+    background: white;
+    border: 1px solid #e9e9ef;
+    border-radius: 24px;
+    padding: 24px;
+    margin: 10px 0;
+    max-width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.chart-section:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .dashboardpage-charts {

@@ -52,13 +52,10 @@ export function StatisticsChartincomeexpense({ transactions = [], type = "expens
 
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>
-      {/* <ResponsiveContainer> */}
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             data={data}
-            // innerRadius={80}
-            // outerRadius={110}
             innerRadius={90}
             outerRadius={130}
             paddingAngle={4}

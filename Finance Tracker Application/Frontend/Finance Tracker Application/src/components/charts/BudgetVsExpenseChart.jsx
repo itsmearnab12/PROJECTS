@@ -75,19 +75,16 @@ export function BudgetVsExpenseChart({ transactions = [], budgets = [] }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart data={data} barGap={10}>
-        {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <CartesianGrid
           vertical={false}
           stroke="#f1f5f9"
         />
 
-        {/* <XAxis dataKey="month" /> */}
         <XAxis
           dataKey="month"
           axisLine={false}
           tickLine={false}
         />
-        {/* <YAxis /> */}
         <YAxis
           axisLine={false}
           tickLine={false}

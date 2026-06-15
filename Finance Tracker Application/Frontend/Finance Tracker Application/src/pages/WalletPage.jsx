@@ -24,7 +24,7 @@ export function WalletPage() {
     return (
         <>
             <div className="page-container">
-                <div>
+                <div className="Walletpageheader">
                     <h3>Wallet</h3>
                     <h5>Overview of your balance and accounts</h5>
                 </div>

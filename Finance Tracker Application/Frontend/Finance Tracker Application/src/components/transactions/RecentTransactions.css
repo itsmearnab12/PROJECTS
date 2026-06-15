@@ -1,77 +1,71 @@
 .recent-container {
-    padding: 12px 20px;
-    border-radius: 30px;
-    border: 1px solid gray;
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid #e9e9ef;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
-.recent-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.recent-header a{
-    text-decoration: none;
-    border: 1px solid gray;
-    padding: 5px;
-    border-radius: 30px;
-    font-size: 14px;
-    color: black;
-    display: flex;
-    align-items: center;
+.recent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
 .recent-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
 }
 
-.recent-table{
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+.recent-header a {
+  text-decoration: none;
+  color: #7c6cff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.recent-table thead tr th:first-child {
-    border-top-left-radius: 10px;
-}
-
-.recent-table thead tr th:last-child {
-    border-top-right-radius: 10px;
+.recent-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .recent-table thead {
-    background: #F5F4FF;
+  background: #f8f8ff;
 }
 
 .recent-table th {
-    text-align: left;
-   padding: 6px 10px;
-    font-size: 14px;
-    color: #8470FF;
+  color: #7c6cff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px;
+  text-align: left;
 }
 
 .recent-table td {
-    padding: 8px 10px;
-    border-top: 1px solid #eee;
+  padding: 14px;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .recent-table tbody tr:hover {
-    background: #fafafa;
+  background: #fafafa;
 }
 
 .income-text {
-    color: green;
+  color: #16a34a;
+  font-weight: 600;
 }
 
 .expense-text {
-    color: red;
+  color: #dc2626;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
-    .type-column {
-        display: none;
-    }
+  .type-column {
+    display: none;
+  }
 }

@@ -35,21 +35,41 @@ const MoneyFlowChart = ({ transactions }) => {
     const data = getMonthlyData(transactions);
 
     return (
-        <div style={{ width: "100%", height: 180 }}>
+        <div style={{ width: "100%", height: 270 }}>
             <div className="Moneyflow-header">
-                <h3>Money Flow</h3>
+                <div>
+                    <h3>Money Flow</h3>
+                    <p className="moneyflow-subtitle">
+                        Monthly income vs expenses
+                    </p>
+                </div>
             </div>
 
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height={220}>
                 <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <Tooltip />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+                    <XAxis
+                        dataKey="month"
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fontSize: 12 }}
+                    />
+                    <YAxis
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fontSize: 12 }}
+                    />
+                    <Tooltip
+                        contentStyle={{
+                            borderRadius: "12px",
+                            border: "none",
+                            boxShadow: "0 4px 15px rgba(0,0,0,0.08)"
+                        }}
+                    />
                     <Legend />
 
-                    <Bar dataKey="income" fill="#7664E4" />
-                    <Bar dataKey="expense" fill="#BFB7FF" />
+                    <Bar dataKey="income" fill="#7C6CFF" radius={[8, 8, 0, 0]}/>
+                    <Bar dataKey="expense" fill="#C7C3FF" radius={[8, 8, 0, 0]}/>
                 </BarChart>
             </ResponsiveContainer>
         </div>

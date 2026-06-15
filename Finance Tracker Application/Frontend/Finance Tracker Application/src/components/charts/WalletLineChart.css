@@ -1,39 +1,56 @@
 .wallet-chart {
-    background: white;
-    padding: 20px;
-    border-radius: 30px;
-    border: 1px solid gray;
-    margin: 10px 0;
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid #e9e9ef;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
 }
 
-/* Header */
+.wallet-chart:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
 .chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-/* Legend */
+.chart-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+
 .legend {
-    display: flex;
-    gap: 15px;
-    font-size: 14px;
-    color: gray;
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  color: #6b7280;
 }
 
 .dot {
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
 }
 
 .income {
-    background: #7B61FF;
+  background: #7c6cff;
 }
 
 .expense {
-    background: #C4B5FD;
+  background: #c4b5fd;
+}
+
+@media (max-width: 768px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }

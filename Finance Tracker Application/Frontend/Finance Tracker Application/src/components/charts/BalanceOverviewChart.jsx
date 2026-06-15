@@ -62,19 +62,15 @@ export function BalanceOverviewChart({ transactions = [] }) {
   return (
     <ResponsiveContainer width="100%" height={200}>
       <LineChart data={data}>
-        {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <CartesianGrid
           vertical={false}
           stroke="#f1f5f9"
         />
-
-        {/* <XAxis dataKey="date" /> */}
         <XAxis
           dataKey="date"
           axisLine={false}
           tickLine={false}
         />
-        {/* <YAxis /> */}
         <YAxis
           axisLine={false}
           tickLine={false}
